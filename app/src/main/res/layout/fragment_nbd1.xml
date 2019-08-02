@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <LinearLayout
+        android:id="@+id/kbd_eng"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        >
+
+        <!-- Kbd numeric row1 -->
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/row1_btn0_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row1_btn_dollar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\u0024"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_blue"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row1_btn1_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row1_btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row1_btn2_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row1_btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row1_btn3_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row1_btn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Kbd numeric row2 -->
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/row2_btn0_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/row2_btn_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search34"
+                    android:padding="@dimen/_6sdp"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2_btn1_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row2_btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2_btn2_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row2_btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2_btn3_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row2_btn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Kbd numeric row3 -->
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/row3_btn0_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/row3_btn_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/hamburg34"
+                    android:padding="@dimen/_6sdp"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3_btn1_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row3_btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3_btn2_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row3_btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3_btn3_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row3_btn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Kbd numeric row4 -->
+        <LinearLayout
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/row4_btn0_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row4_btn_cross"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\u274C"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_red"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row4_btn1_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/row4_btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back34"
+                    android:padding="@dimen/_6sdp"
+                    android:textColor="@color/kbd_orange"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row4_btn2_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row4_btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row4_btn3_ll"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/row4_btn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&gt;"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/kbd_number_font"
+                    android:textColor="@color/kbd_yellow"
+                    android:background="@drawable/circle_cyan"
+                    android:gravity="center_horizontal|center_vertical"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main2Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:layout_marginTop="40dp"
+                    android:layout_width="wrap_content"
+                    android:text="Input number here"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edt1"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp" />
+
+
+                <TextView
+                    android:layout_marginTop="50dp"
+                    android:layout_width="wrap_content"
+                    android:text="Input name here"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edt2"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:layout_marginTop="50dp"
+                    android:layout_width="wrap_content"
+                    android:text="Input Phone here"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edt3"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <!-- kbd -->
+
+    <LinearLayout
+        android:id="@+id/kbd_eng"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:background="#000000"
+        android:orientation="vertical"
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v4.view.ViewPager>
+
+    </LinearLayout>
+
+
+</LinearLayout>
