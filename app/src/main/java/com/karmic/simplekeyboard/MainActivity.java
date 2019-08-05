@@ -22,6 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
         //ContentResolver contentResolver = getContentResolver();
         //changekeyboard("keyboard",contentResolver);
+
+        // Create the Keyboard
+        Keyboard mKeyboard= new Keyboard(MainActivity.this,R.xml.qwerty);
+
+        // Lookup the KeyboardView
+        KeyboardView mKeyboardView= (KeyboardView)findViewById(R.id.keyboardview);
+        // Attach the keyboard to the view
+        mKeyboardView.setKeyboard( mKeyboard );
+        // Do not show the preview balloons
+        mKeyboardView.setPreviewEnabled(false);
     }
 
 

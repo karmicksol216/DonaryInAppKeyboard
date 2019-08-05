@@ -11,18 +11,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.karmic.ViewHolder.EnglishKeyViewHolder
-import com.karmic.adapter.EnglishKBDAdapter
+import com.karmic.adapter.HebrewKBDAdapter
 
 
 
-class AlphabetKBD1Fragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
+class HebrewKBD1Fragment : Fragment() , HebrewKBDAdapter.OnItemClickListener{
 
     var mContext: Context ?= null
     private var mActivity: AppCompatActivity? = null
     var rv: RecyclerView?=null
-    var adapter: EnglishKBDAdapter?=null
+    var adapter: HebrewKBDAdapter?=null
     var layoutManager: RecyclerView.LayoutManager?=null
-    var listner:EnglishKBDAdapter.OnItemClickListener?=null
+    var listner:HebrewKBDAdapter.OnItemClickListener?=null
 
     internal lateinit var onKeyBoardlistener: OnKeyBoard
 
@@ -52,8 +52,8 @@ class AlphabetKBD1Fragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
         super.onViewCreated(view, savedInstanceState)
 
         rv=view.findViewById(R.id.rv_english) as RecyclerView
-        listner=this@AlphabetKBD1Fragment
-        adapter = EnglishKBDAdapter(context!!, listner as AlphabetKBD1Fragment )
+        listner=this@HebrewKBD1Fragment
+        adapter = HebrewKBDAdapter(context!!, listner as HebrewKBD1Fragment )
         layoutManager = GridLayoutManager(mContext, 6)
         rv!!.layoutManager = layoutManager
         rv!!.adapter = adapter
@@ -65,7 +65,7 @@ class AlphabetKBD1Fragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
     override fun onItemClick(item: RecyclerView.ViewHolder, pos: Int, Total: Int) {
 
         //12-hebrew , 18-numeric, 24-move left, 27-space
-        onKeyBoardlistener.onAlphaKeyPressed(pos)
+        onKeyBoardlistener.onHebrewKeyPressed(pos)
     }
 
 }

@@ -4,17 +4,17 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.karmic.ViewHolder.EnglishKeyViewHolder
+import com.karmic.ViewHolder.HebrewKeyViewHolder
 import java.lang.Exception
 import android.view.textclassifier.TextClassifier.TYPE_EMAIL
 import android.text.TextUtils
 import android.view.View
 import com.bumptech.glide.Glide
-import com.karmic.ViewHolder.EnglishKeySqrViewHolder
+import com.karmic.ViewHolder.HebrewKeySqrViewHolder
 import com.karmic.simplekeyboard.R
 
 
-class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     var context:Context?=null
@@ -23,7 +23,7 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
     private val TYPE_1 = 1
     private val TYPE_2 = 2
 
-    val alphabets = arrayOf<String>("A","B","C","D","E","F","G","H","I","J","K","L","*","M","N","O","P","Q","*","R","S","T","U","V","<","W","X","\u2423","Y","Z")
+    val alphabets = arrayOf<String>("\u05D0","\u05D1","\u05D2","\u05D3","\u05D4","\u05D5","\u05D6","\u05D7","\u05D8","\u05D9","\u05DA","\u05DB","*","\u05DC","\u05DE","\u05DF","\u05E0","\u05E1","*","\u05E2","\u05E3","\u05E4","\u05E5","\u05E6","<","\u05E7","\u05E3","\u2423","\u05E4","\u05E5")
 
     private var selectedPosition = -1
 
@@ -43,9 +43,9 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
         var v:View?=null
 
         if (viewType == TYPE_1) { // for 1
-            return EnglishKeySqrViewHolder(inflater,view)
+            return HebrewKeySqrViewHolder(inflater,view)
         } else { // for email layout
-            return EnglishKeyViewHolder(inflater,view)
+            return HebrewKeyViewHolder(inflater,view)
         }
 
 
@@ -72,17 +72,17 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
 
         if (getItemViewType(position) == TYPE_1) {
             //(viewHolder as CallViewHolder).setCallDetails(employees.get(position))
-            var view:  EnglishKeySqrViewHolder=holder as EnglishKeySqrViewHolder
+            var view:  HebrewKeySqrViewHolder=holder as HebrewKeySqrViewHolder
             try {
                 //view.btn1_img!!.text = alphabets.get(position)
                 if(position== 12){
                     Glide.with(context!!)
-                            .load(R.drawable.hebrew_icon)
+                            .load(R.drawable.number_icon)
                             .into(view.btn1_img!!);
                 }
                 if(position==18){
                     Glide.with(context!!)
-                            .load(R.drawable.number_icon)
+                            .load(R.drawable.alphabet_icon)
                             .into(view.btn1_img!!);
                 }
             }catch (e:Exception){ e.printStackTrace()}
@@ -96,7 +96,7 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
 
         } else {
             //(viewHolder as EmailViewHolder).setEmailDetails(employees.get(position))
-            var view:  EnglishKeyViewHolder=holder as EnglishKeyViewHolder
+            var view:  HebrewKeyViewHolder=holder as HebrewKeyViewHolder
             try {
                 view.btn1_txt!!.text = alphabets.get(position)
             }catch (e:Exception){ e.printStackTrace()}

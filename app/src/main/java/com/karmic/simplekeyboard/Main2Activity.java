@@ -86,13 +86,14 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         @Override
         public Fragment getItem(int position) {
             switch (position) {
-                case 0: // Fragment # 0 - This will show FirstFragment
+                case 0:
                     return NumericKBD1Fragment.newInstance(0, "Page # 1");
-                case 1: // Fragment # 0 - This will show FirstFragment different title
-                    return SecondFragment.newInstance(1, "Page # 2");
-                case 2: // Fragment # 1 - This will show SecondFragment
-                    //return new AlphabetKBD1Fragment();
-                    return FirstFragment.newInstance(1, "Page # 1");
+                case 1:
+                    return new AlphabetKBD1Fragment();
+                    //return SecondFragment.newInstance(1, "Page # 2");
+                case 2:
+                    return new HebrewKBD1Fragment();
+                    //return FirstFragment.newInstance(1, "Page # 1");
                 default:
                     return null;
             }
@@ -202,11 +203,12 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    // for ABC keyboard input
-    String alphabets[] = {"A","B","C","D","E","F","G","H","I","J","K","L","*","M","N","O","P","Q","*","R","S","T","U","V","<","W","X","\u2423","Y","Z"};
 
     @Override
     public void onAlphaKeyPressed(Integer pos) {
+
+        // for ABC keyboard input
+        String alphabets[] = {"A","B","C","D","E","F","G","H","I","J","K","L","*","M","N","O","P","Q","*","R","S","T","U","V","<","W","X","\u2423","Y","Z"};
 
         //---------identifies which edittext to handle ----
         EditText edt=new EditText(this);
@@ -224,7 +226,60 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             edt=edt3;
         }
 
-        edt.setText(edt.getText()+ alphabets[pos]);
+        //12-hebrew , 18-numeric, 24-move left, 27-space
+        if(pos==12) {
+            //move to hebrew kbd
+            vpPager.setCurrentItem(2);//text
+        } else if(pos==18) {
+            //move to numeric kbd
+            vpPager.setCurrentItem(0);//text
+        }else if(pos==24) {
+            //move left
+             vpPager.setCurrentItem(0);//text
+        }else if(pos==27) {
+            edt.setText(edt.getText() + " ");
+        } else {
+            edt.setText(edt.getText() + alphabets[pos]);
+        }
+    }
+
+    @Override
+    public void onHebrewKeyPressed(Integer pos) {
+
+        String alphabets[] = {"\u05D0","\u05D1","\u05D2","\u05D3","\u05D4","\u05D5","\u05D6","\u05D7","\u05D8","\u05D9","\u05DA","\u05DB","*","\u05DC","\u05DE","\u05DF","\u05E0","\u05E1","*","\u05E2","\u05E3","\u05E4","\u05E5","\u05E6","<","\u05E7","\u05E3","\u2423","\u05E4","\u05E5"};
+
+        //---------identifies which edittext to handle ----
+        EditText edt=new EditText(this);
+
+        if(whichEdt.equals("1"))
+        {
+            edt=edt1;
+        }
+        if(whichEdt.equals("2"))
+        {
+            edt=edt2;
+        }
+        if(whichEdt.equals("3"))
+        {
+            edt=edt3;
+        }
+
+        //12-hebrew , 18-numeric, 24-move left, 27-space
+        if(pos==12) {
+            //move to number
+            vpPager.setCurrentItem(0);//text
+        } else if(pos==18) {
+            //move to alphabet
+            vpPager.setCurrentItem(1);//text
+        }else if(pos==24) {
+            //move left
+            vpPager.setCurrentItem(1);//text
+        }else if(pos==27) {
+            edt.setText(edt.getText() + " ");
+        } else {
+            edt.setText(edt.getText() + alphabets[pos]);
+        }
+
     }
 
 
