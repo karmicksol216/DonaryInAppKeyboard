@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<com.karmic.customviews.CustomKeyboardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:keyPreviewLayout ="@layout/preview"
+        android:keyBackground="@color/kbd_background"
+        android:keyTextColor="@color/kbd_yellow"
+        android:keyTextSize="@dimen/_22sdp"
+        />
+
+
+<!--
 <android.inputmethodservice.KeyboardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/keyboard"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:keyPreviewLayout ="@layout/preview"
-    android:keyBackground="@drawable/circle_cyan"
-    />
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:keyPreviewLayout ="@layout/preview"
+        android:keyBackground="@drawable/circle_cyan36"
+        android:keyTextColor="@color/kbd_yellow"
+        android:keyTextSize="@dimen/_22sdp"
+        />
+-->
+

@@ -7,6 +7,7 @@ import android.media.AudioManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
+import android.widget.Toast;
 
 public class SimpleIME extends InputMethodService
         implements KeyboardView.OnKeyboardActionListener {
@@ -16,12 +17,30 @@ public class SimpleIME extends InputMethodService
 
     private boolean caps = false;
 
+    public final static int KBD_NUMBER     = 10001;
+    public final static int KBD_QUERTY     = 10002;
+
+    private int current_kbd=KBD_NUMBER;
+
+    public final static int CodeLeft     = 55002;
+    public final static int CodeSearch     = 15001;
+    public final static int CodeMenu     = 15002;
+
+
     @Override
     public View onCreateInputView() {
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-        keyboard = new Keyboard(this, R.xml.qwerty);
+
+        if(current_kbd==KBD_NUMBER) {
+            keyboard = new Keyboard(this, R.xml.numkbd);
+            current_kbd=KBD_QUERTY;
+        }
+        else if(current_kbd==KBD_QUERTY) {
+            keyboard = new Keyboard(this, R.xml.qwerty);
+            current_kbd=KBD_NUMBER;
+        }
+
         kv.setKeyboard(keyboard);
-        //kv.setBackgroundResource(R.drawable.circle_cyan);
         kv.setOnKeyboardActionListener(this);
         return kv;
     }
@@ -29,6 +48,7 @@ public class SimpleIME extends InputMethodService
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
         InputConnection ic = getCurrentInputConnection();
+        //int start = ic.getSelectionStart();
         playClick(primaryCode);
         switch(primaryCode){
             case Keyboard.KEYCODE_DELETE :
@@ -42,6 +62,18 @@ public class SimpleIME extends InputMethodService
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
+            case CodeLeft:
+                //ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                ic.setSelection(1,0);
+                break;
+
+            case CodeMenu:
+                Toast.makeText(getApplicationContext(),"Menu Pressed",Toast.LENGTH_SHORT).show();
+                break;
+            case CodeSearch:
+                Toast.makeText(getApplicationContext(),"Search Pressed",Toast.LENGTH_SHORT).show();
+                break;
+
             default:
                 char code = (char)primaryCode;
                 if(Character.isLetter(code) && caps){
@@ -70,10 +102,37 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public void swipeLeft() {
+
+        if(current_kbd==KBD_NUMBER) {
+            keyboard = new Keyboard(this, R.xml.numkbd);
+            current_kbd=KBD_QUERTY;
+        }
+        else if(current_kbd==KBD_QUERTY) {
+            keyboard = new Keyboard(this, R.xml.qwerty);
+            current_kbd=KBD_NUMBER;
+        }
+
+        //keyboard = new Keyboard(this, R.xml.qwerty);
+        kv.setKeyboard(keyboard);
+        kv.setOnKeyboardActionListener(this);
     }
 
     @Override
     public void swipeRight() {
+
+        if(current_kbd==KBD_NUMBER) {
+            keyboard = new Keyboard(this, R.xml.numkbd);
+            current_kbd=KBD_QUERTY;
+        }
+        else if(current_kbd==KBD_QUERTY) {
+            keyboard = new Keyboard(this, R.xml.qwerty);
+            current_kbd=KBD_NUMBER;
+        }
+
+
+        //keyboard = new Keyboard(this, R.xml.numkbd);
+        kv.setKeyboard(keyboard);
+        kv.setOnKeyboardActionListener(this);
     }
 
     @Override

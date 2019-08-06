@@ -17,21 +17,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //InputMethodManager imeManager = (InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
-        //imeManager.showInputMethodPicker();
+        InputMethodManager imeManager = (InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
+        imeManager.showInputMethodPicker();
 
         //ContentResolver contentResolver = getContentResolver();
         //changekeyboard("keyboard",contentResolver);
 
-        // Create the Keyboard
-        Keyboard mKeyboard= new Keyboard(MainActivity.this,R.xml.qwerty);
 
-        // Lookup the KeyboardView
-        KeyboardView mKeyboardView= (KeyboardView)findViewById(R.id.keyboardview);
-        // Attach the keyboard to the view
-        mKeyboardView.setKeyboard( mKeyboard );
-        // Do not show the preview balloons
-        mKeyboardView.setPreviewEnabled(false);
     }
 
 
