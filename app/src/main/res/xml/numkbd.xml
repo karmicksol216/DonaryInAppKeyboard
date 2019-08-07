@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:keyWidth="25%p"
-    android:horizontalGap="20px"
-    android:verticalGap="20px"
-    android:keyHeight="70dip">
+    android:horizontalGap="10px"
+    android:verticalGap="10px"
+    android:keyHeight="55dp">
 
     <Row>
-        <Key android:codes="36" android:keyIcon="@drawable/dollar_icon" android:keyEdgeFlags="left" />
+        <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left" />
+        <Key android:codes="36" android:keyIcon="@drawable/dollar_icon"  />
         <Key android:codes="49" android:keyLabel="1"  />
         <Key android:codes="50" android:keyLabel="2" />
-        <Key android:codes="51" android:keyLabel="3" android:keyEdgeFlags="right" />
-
+        <Key android:codes="51" android:keyLabel="3"  />
+        <Key android:codes="0" android:keyLabel=""  android:keyEdgeFlags="right" />
     </Row>
+
     <Row>
-        <Key android:codes="15001"  android:keyIcon="@drawable/search_icon" android:keyEdgeFlags="left" />
+        <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left" />
+        <Key android:codes="15001"  android:keyIcon="@drawable/search_icon"  />
         <Key android:codes="52" android:keyLabel="4" />
         <Key android:codes="53" android:keyLabel="5" />
-        <Key android:codes="54" android:keyLabel="6" android:keyEdgeFlags="right"/>
-
+        <Key android:codes="54" android:keyLabel="6" />
+        <Key android:codes="0" android:keyLabel=""  android:keyEdgeFlags="right" />
     </Row>
+
     <Row>
+        <Key android:codes="0" android:keyLabel=""  android:keyEdgeFlags="left" />
         <Key android:codes="15002"  android:keyIcon="@drawable/menu_icon" android:keyEdgeFlags="left" />
         <Key android:codes="55" android:keyLabel="7" />
         <Key android:codes="56" android:keyLabel="8" />
-        <Key android:codes="57" android:keyLabel="9" android:keyEdgeFlags="right" />
-
+        <Key android:codes="57" android:keyLabel="9"  />
+        <Key android:codes="0" android:keyLabel=""  android:keyEdgeFlags="right" />
     </Row>
+
     <Row>
-        <Key android:codes="-5" android:keyIcon="@drawable/cross_icon" android:isRepeatable="true" android:iconPreview="@drawable/cross_icon" android:keyEdgeFlags="left" />
-        <Key android:codes="55002" android:keyEdgeFlags="right" android:keyIcon="@drawable/back_icon" />
+        <Key android:codes="0" android:keyLabel=""  android:keyEdgeFlags="left" />
+        <Key android:codes="15003"  android:isRepeatable="true" android:keyIcon="@drawable/cross_icon" android:iconPreview="@drawable/cross_icon"  />
+        <Key android:codes="-5"  android:isRepeatable="true" android:keyIcon="@drawable/back_icon" android:iconPreview="@drawable/back_icon" />
         <Key android:codes="48" android:keyLabel="0" />
-        <Key android:codes="62" android:keyLabel=">"  android:keyEdgeFlags="right" />
+        <Key android:codes="15004" android:keyLabel=">"   />
+        <Key android:codes="0" android:keyLabel=""  android:keyEdgeFlags="right" />
    </Row>
 
 </Keyboard>

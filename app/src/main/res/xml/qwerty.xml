@@ -43,10 +43,10 @@
         <Key android:codes="63" android:keyLabel="\?" android:keyEdgeFlags="right"/>
     </Row>
     <Row android:rowEdgeFlags="bottom">
-        <Key android:codes="44" android:keyLabel="," android:keyWidth="15%p"  android:keyEdgeFlags="left"/>
-        <Key android:codes="47" android:keyLabel="/" android:keyWidth="15%p" />
-        <Key android:codes="32" android:keyLabel="\u2423" android:keyWidth="30%p" android:isRepeatable="true"/>
-        <Key android:codes="-5" android:keyIcon="@drawable/cross_icon" android:keyWidth="20%p" android:isRepeatable="true"/>
-        <Key android:codes="-4" android:keyLabel="\u23CE" android:keyWidth="20%p" android:keyEdgeFlags="right"/>
+        <Key android:codes="44" android:keyLabel="," android:keyWidth="10%p"  android:keyEdgeFlags="left"/>
+        <Key android:codes="47" android:keyLabel="/" android:keyWidth="10%p" />
+        <Key android:codes="32" android:keyLabel="\u2423" android:keyWidth="60%p" android:isRepeatable="true"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/cross_icon" android:keyWidth="10%p" android:isRepeatable="true"/>
+        <Key android:codes="-4" android:keyLabel="\u23CE" android:keyWidth="10%p" android:keyEdgeFlags="right"/>
     </Row>
 </Keyboard>
