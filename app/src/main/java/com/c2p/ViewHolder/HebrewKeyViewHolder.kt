@@ -1,20 +1,17 @@
-package com.karmic.ViewHolder
+package com.c2p.ViewHolder
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 
 
-import android.widget.LinearLayout
-import com.karmic.simplekeyboard.R
+import com.c2p.donaryKbd.R
 
 
-class EnglishKeyViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.eng_kbd_list_item, parent, false)) {
+class HebrewKeyViewHolder (inflater: LayoutInflater, parent: ViewGroup) :
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.hbd_kbd_list_item, parent, false)) {
 
     public var btn1_txt: TextView? = null
 

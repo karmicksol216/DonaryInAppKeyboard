@@ -1,4 +1,4 @@
-package com.karmic.simplekeyboard
+package com.c2p.donaryKbd
 
 
 import android.content.Context
@@ -10,19 +10,18 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.karmic.ViewHolder.EnglishKeyViewHolder
-import com.karmic.adapter.HebrewKBDAdapter
+import com.c2p.adapter.EnglishKBDAdapter
 
 
 
-class HebrewKBD1Fragment : Fragment() , HebrewKBDAdapter.OnItemClickListener{
+class AlphabetKBD1Fragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
 
     var mContext: Context ?= null
     private var mActivity: AppCompatActivity? = null
     var rv: RecyclerView?=null
-    var adapter: HebrewKBDAdapter?=null
+    var adapter: EnglishKBDAdapter?=null
     var layoutManager: RecyclerView.LayoutManager?=null
-    var listner:HebrewKBDAdapter.OnItemClickListener?=null
+    var listner:EnglishKBDAdapter.OnItemClickListener?=null
 
     internal lateinit var onKeyBoardlistener: OnKeyBoard
 
@@ -52,8 +51,8 @@ class HebrewKBD1Fragment : Fragment() , HebrewKBDAdapter.OnItemClickListener{
         super.onViewCreated(view, savedInstanceState)
 
         rv=view.findViewById(R.id.rv_english) as RecyclerView
-        listner=this@HebrewKBD1Fragment
-        adapter = HebrewKBDAdapter(context!!, listner as HebrewKBD1Fragment )
+        listner=this@AlphabetKBD1Fragment
+        adapter = EnglishKBDAdapter(context!!, listner as AlphabetKBD1Fragment )
         layoutManager = GridLayoutManager(mContext, 6)
         rv!!.layoutManager = layoutManager
         rv!!.adapter = adapter
@@ -65,7 +64,7 @@ class HebrewKBD1Fragment : Fragment() , HebrewKBDAdapter.OnItemClickListener{
     override fun onItemClick(item: RecyclerView.ViewHolder, pos: Int, Total: Int) {
 
         //12-hebrew , 18-numeric, 24-move left, 27-space
-        onKeyBoardlistener.onHebrewKeyPressed(pos)
+        onKeyBoardlistener.onAlphaKeyPressed(pos)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.karmic.simplekeyboard;
+package com.c2p.donaryKbd;
 
 
 import android.os.Bundle;
@@ -8,21 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-public class FirstFragment extends Fragment implements View.OnClickListener {
+public class ThirdFragment extends Fragment implements View.OnClickListener {
     // Store instance variables
     private String title;
     private int page;
 
-    TextView row1_btn1,row1_btn2,row1_btn3,row1_btn4,row2_btn3;
-    TextView row2_btn1,row2_btn4;
-
+    TextView row1_btn1,row1_btn2,row1_btn3,row1_btn4;
+    TextView row2_btn1;
+    EditText edt1;
 
     // newInstance constructor for creating fragment with arguments
-    public static FirstFragment newInstance(int page, String title) {
-        FirstFragment fragmentFirst = new FirstFragment();
+    public static ThirdFragment newInstance(int page, String title) {
+        ThirdFragment fragmentFirst = new ThirdFragment();
         Bundle args = new Bundle();
         args.putInt("someInt", page);
         args.putString("someTitle", title);
@@ -42,7 +41,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        View view = inflater.inflate(R.layout.fragment_third, container, false);
 
         row1_btn1 = (TextView) view.findViewById(R.id.row1_btn1);
         row1_btn1.setOnClickListener(this); // calling onClick() method
@@ -59,12 +58,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
         row2_btn1 = (TextView) view.findViewById(R.id.row2_btn1);
         row2_btn1.setOnClickListener(this); // calling onClick() method
 
-        row2_btn3 = (TextView) view.findViewById(R.id.row2_btn3);
-        row2_btn3.setOnClickListener(this); // calling onClick() method
-
-        row2_btn4 = (TextView) view.findViewById(R.id.row2_btn4);
-        row2_btn4.setOnClickListener(this); // calling onClick() method
-
+        edt1 = (EditText) view.findViewById(R.id.edt1);
 
         return view;
     }
@@ -76,38 +70,26 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
 
             case R.id.row1_btn1:
                 // do your code
-                ((Main2Activity)getActivity()).edt1.setText(((Main2Activity)getActivity()).edt1.getText()+"1");
+                edt1.setText(edt1.getText()+"1");
                 break;
 
             case R.id.row1_btn2:
                 // do your code
-                ((Main2Activity)getActivity()).edt1.setText(((Main2Activity)getActivity()).edt1.getText()+"2");
+                edt1.setText(edt1.getText()+"2");
                 break;
             case R.id.row1_btn3:
                 // do your code
-                ((Main2Activity)getActivity()).edt1.setText(((Main2Activity)getActivity()).edt1.getText()+"3");
+                edt1.setText(edt1.getText()+"3");
                 break;
 
             case R.id.row1_btn4:
                 // do your code
-                ((Main2Activity)getActivity()).edt1.setText(((Main2Activity)getActivity()).edt1.getText()+"4");
-                break;
-
-            case R.id.row2_btn3:
-                // space
-                ((Main2Activity)getActivity()).edt1.setText(((Main2Activity)getActivity()).edt1.getText()+" ");
-                break;
-
-            case R.id.row2_btn4:
-                // enter
-                Toast.makeText(getContext(),"Input: "+ ((Main2Activity)getActivity()).edt1.getText().toString(),Toast.LENGTH_SHORT).show();
-                ((Main2Activity)getActivity()).edt1.setText("");
+                edt1.setText(edt1.getText()+"4");
                 break;
 
             case R.id.row2_btn1:
-                // backspace
-                if(((Main2Activity)getActivity()).edt1.getText().length()>0)
-                    ((Main2Activity)getActivity()).edt1.setText(((Main2Activity)getActivity()).edt1.getText().subSequence(0,((Main2Activity)getActivity()).edt1.getText().length()-1));
+                // do your code
+                edt1.setText(edt1.getText().subSequence(0,edt1.getText().length()-1));
                 break;
 
             default:

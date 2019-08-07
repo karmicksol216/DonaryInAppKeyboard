@@ -1,4 +1,4 @@
-package com.karmic.simplekeyboard;
+package com.c2p.donaryKbd;
 
 
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class NumericKBD1Fragment extends Fragment implements View.OnClickListener {

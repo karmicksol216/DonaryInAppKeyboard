@@ -1,4 +1,4 @@
-package com.karmic.simplekeyboard;
+package com.c2p.donaryKbd;
 
 import org.junit.Test;
 

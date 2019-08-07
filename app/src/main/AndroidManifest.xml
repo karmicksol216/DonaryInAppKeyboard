@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.karmic.simplekeyboard">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.c2p.donaryKbd">
 
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
 
@@ -10,9 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".Main2Activity"
+        <activity android:name="com.c2p.donaryKbd.Main2Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"
             >
@@ -23,7 +25,7 @@
          </activity>
 
 
-        <activity android:name=".MainActivity"
+        <activity android:name="com.c2p.donaryKbd.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"
             >
@@ -34,7 +36,7 @@
         </activity>
 
         <service
-            android:name=".SimpleIME"
+            android:name="com.c2p.donaryKbd.SimpleIME"
             android:label="@string/simple_ime"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <meta-data

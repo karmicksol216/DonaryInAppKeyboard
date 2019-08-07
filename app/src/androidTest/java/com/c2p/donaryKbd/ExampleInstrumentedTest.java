@@ -1,4 +1,4 @@
-package com.karmic.simplekeyboard;
+package com.c2p.donaryKbd;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

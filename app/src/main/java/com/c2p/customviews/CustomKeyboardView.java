@@ -1,6 +1,5 @@
-package com.karmic.customviews;
+package com.c2p.customviews;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,13 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.KeyboardView;
-import android.text.Editable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 
-import com.karmic.simplekeyboard.R;
+import com.c2p.donaryKbd.R;
 
 import java.util.List;
 
