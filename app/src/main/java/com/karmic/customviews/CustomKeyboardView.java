@@ -52,11 +52,7 @@ public class CustomKeyboardView extends KeyboardView {
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        /*View focusCurrent = context.getWindow().getCurrentFocus();
-        if( focusCurrent==null || focusCurrent.getClass()!= EditText.class ) return;
-        EditText edittext = (EditText) focusCurrent;
-        Editable editable = edittext.getText();
-        int start = edittext.getSelectionStart();*/
+
 
         List<Key> keys = getKeyboard().getKeys();
 
@@ -86,7 +82,7 @@ public class CustomKeyboardView extends KeyboardView {
             Paint paint = new Paint();
             paint.setTextAlign(Paint.Align.CENTER);
 
-            //if(key.codes[0]>=97 && key.codes[0]<=122)
+
 
             if((key.codes[0]>=97 && key.codes[0]<=122) || key.codes[0] == 64 || key.codes[0] == 63)
             {
@@ -98,7 +94,7 @@ public class CustomKeyboardView extends KeyboardView {
             }
             else if((key.codes[0]>=65 && key.codes[0]<=90) || key.codes[0] == 32 )
             {
-                paint.setTextSize(62);//ABC
+                paint.setTextSize(52);//ABC
             }
             else
             {
@@ -110,8 +106,9 @@ public class CustomKeyboardView extends KeyboardView {
             if (key.label != null) {
                 canvas.drawText(key.label.toString(), key.x + (key.width / 2),
                         key.y + (key.height / 2)+20, paint);
-            } else {
-
+            }
+            else
+            {
                 int padding=0;
 
                 //--for ABC
@@ -121,8 +118,9 @@ public class CustomKeyboardView extends KeyboardView {
 
                 //--for Numeric
                 if (key.codes[0] == 15001 || key.codes[0] == 15002 || key.codes[0] == 15003 || key.codes[0] == 36|| key.codes[0] == -5 ) {
-                    padding=30;
+                    padding=25;
                 }
+
 
                 key.icon.setBounds(key.x+padding, key.y+padding, key.x + key.width-padding, key.y + key.height-padding);
                 key.icon.draw(canvas);

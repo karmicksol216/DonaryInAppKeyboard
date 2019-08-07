@@ -144,7 +144,23 @@ public class SimpleIME extends InputMethodService
 
     @Override
     public void swipeRight() {
-        //Toast.makeText(getApplicationContext(),"Right",Toast.LENGTH_SHORT).show();
+        //Numeric-ABC-Qwerty
+
+        if (next_kbd == KBD_NUMBER) {
+            keyboard = new Keyboard(this, R.xml.numkbd);
+            current_kbd = KBD_NUMBER;
+            next_kbd = KBD_ABC;
+        } else if (next_kbd == KBD_ABC) {
+            keyboard = new Keyboard(this, R.xml.abckbd);
+            current_kbd = KBD_ABC;
+            next_kbd = KBD_QUERTY;
+        } else if (next_kbd == KBD_QUERTY) {
+            keyboard = new Keyboard(this, R.xml.qwerty);
+            current_kbd = KBD_QUERTY;
+            next_kbd = KBD_NUMBER;
+        }
+        kv.setKeyboard(keyboard);
+        kv.setOnKeyboardActionListener(this);
     }
 
     @Override
@@ -174,6 +190,7 @@ public class SimpleIME extends InputMethodService
     public void onStartInputView(EditorInfo attribute, boolean restarting) {
 
         switch (attribute.inputType & EditorInfo.TYPE_MASK_CLASS) {
+
             case EditorInfo.TYPE_CLASS_NUMBER:
                 keyboard = new Keyboard(this, R.xml.numkbd);
                 current_kbd = KBD_NUMBER;

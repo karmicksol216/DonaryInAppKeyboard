@@ -2,7 +2,7 @@
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:keyWidth="10%p"
     android:horizontalGap="2px"
-    android:verticalGap="25px"
+    android:verticalGap="15px"
     android:keyHeight="40dp"
     >
 
@@ -49,4 +49,18 @@
         <Key android:codes="-5" android:keyIcon="@drawable/cross_icon" android:keyWidth="10%p" android:isRepeatable="true"/>
         <Key android:codes="-4" android:keyLabel="\u23CE" android:keyWidth="10%p" android:keyEdgeFlags="right"/>
     </Row>
+
+    <!--<Row height="10dp">
+        <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left" />
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""/>
+        <Key android:codes="0" android:keyLabel=""  android:keyEdgeFlags="right" />
+    </Row>-->
+
 </Keyboard>

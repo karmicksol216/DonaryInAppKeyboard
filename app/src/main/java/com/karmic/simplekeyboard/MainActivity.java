@@ -1,6 +1,7 @@
 package com.karmic.simplekeyboard;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.provider.Settings;
@@ -20,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
         InputMethodManager imeManager = (InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
         imeManager.showInputMethodPicker();
 
-        //ContentResolver contentResolver = getContentResolver();
-        //changekeyboard("keyboard",contentResolver);
+        //startActivity(new Intent("android.settings.INPUT_METHOD_SETTINGS"));
 
 
     }
