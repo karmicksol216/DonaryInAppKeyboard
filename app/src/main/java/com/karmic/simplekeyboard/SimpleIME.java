@@ -66,20 +66,24 @@ public class SimpleIME extends InputMethodService
             case Keyboard.KEYCODE_DELETE:
                 ic.deleteSurroundingText(1, 0);
                 break;
+
             case Keyboard.KEYCODE_SHIFT:
                 caps = !caps;
                 keyboard.setShifted(caps);
                 kv.invalidateAllKeys();
                 break;
+
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
+
             /*case CodeLeft:
                 ic.setSelection(1,0);
                 break;*/
             case CodeDeleteRight:
                 ic.deleteSurroundingText(0, 1);
                 break;
+
             case CodeNextAbc:
                 //Toast.makeText(getApplicationContext(),"Next",Toast.LENGTH_SHORT).show();
                 keyboard = new Keyboard(this, R.xml.abckbd);
@@ -88,11 +92,25 @@ public class SimpleIME extends InputMethodService
                 kv.setKeyboard(keyboard);
                 kv.setOnKeyboardActionListener(this);
                 break;
+
             case CodeMenu:
                 Toast.makeText(getApplicationContext(), "Menu Pressed", Toast.LENGTH_SHORT).show();
                 break;
+
             case CodeSearch:
                 Toast.makeText(getApplicationContext(), "Search Pressed", Toast.LENGTH_SHORT).show();
+                break;
+
+            case CodeNextNumeric:
+                keyboard = new Keyboard(this, R.xml.numkbd);
+                current_kbd = KBD_NUMBER;
+                next_kbd = KBD_ABC;
+                kv.setKeyboard(keyboard);
+                kv.setOnKeyboardActionListener(this);
+                break;
+
+            case CodeNextHebrew:
+                Toast.makeText(getApplicationContext(), "Under development", Toast.LENGTH_SHORT).show();
                 break;
 
             default:
