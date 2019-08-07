@@ -65,7 +65,7 @@ public class CustomKeyboardView extends KeyboardView {
             Log.e("KEY", "Drawing key with code " + key.codes[0]);
 
             if (key.codes[0] == 0) {
-                //-- for space around numeric keyboard
+                //-- for space around numeric keyboard, padding
                 Drawable dr = (Drawable) context.getResources().getDrawable(R.drawable.circle_black_key);
                 dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
                 dr.draw(canvas);
