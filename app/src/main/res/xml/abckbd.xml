@@ -3,10 +3,21 @@
     android:keyWidth="12.5%p"
     android:horizontalGap="8px"
     android:verticalGap="10px"
-    android:keyHeight="40dp"
     >
 
-    <Row>
+
+    <Row android:keyHeight="10dp">
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel="" android:keyEdgeFlags="left" />
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel=""  />
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel=""  />
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel=""  />
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel=""  />
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel=""  />
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel=""  />
+        <Key android:codes="0"   android:keyHeight="@dimen/_20sdp" android:keyLabel=""  android:keyEdgeFlags="right" />
+    </Row>
+
+    <Row android:keyHeight="40dp">
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left"/>
         <Key android:codes="65" android:keyLabel="A" />
         <Key android:codes="66" android:keyLabel="B"/>
@@ -17,7 +28,7 @@
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="right"/>
     </Row>
 
-    <Row>
+    <Row android:keyHeight="40dp" >
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left"/>
         <Key android:codes="71" android:keyLabel="G" />
         <Key android:codes="72" android:keyLabel="H"/>
@@ -28,7 +39,7 @@
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="right"/>
     </Row>
 
-    <Row>
+    <Row android:keyHeight="40dp" >
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left"/>
         <Key android:codes="16001" android:keyIcon="@drawable/number_icon" />
         <Key android:codes="77" android:keyLabel="M"/>
@@ -39,7 +50,7 @@
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="right"/>
     </Row>
 
-    <Row>
+    <Row android:keyHeight="40dp">
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left"/>
         <Key android:codes="16002" android:keyIcon="@drawable/hebrew_icon" />
         <Key android:codes="82" android:keyLabel="R"/>
@@ -50,9 +61,8 @@
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="right"/>
     </Row>
 
-    <Row>
+    <Row android:keyHeight="40dp">
         <Key android:codes="0" android:keyLabel="" android:keyEdgeFlags="left"/>
-        <!--<Key android:codes="16003" android:keyLabel="&lt;" />-->
         <Key android:codes="-5"  android:isRepeatable="true" android:keyIcon="@drawable/back_icon" android:iconPreview="@drawable/back_icon" />
         <Key android:codes="87" android:keyLabel="W"/>
         <Key android:codes="88" android:keyLabel="X"/>
@@ -63,5 +73,16 @@
     </Row>
 
 
+
+    <Row android:keyHeight="10dp">
+        <Key android:codes="0"   android:keyLabel="" android:keyEdgeFlags="left" />
+        <Key android:codes="0"   android:keyLabel=""  />
+        <Key android:codes="0"   android:keyLabel=""  />
+        <Key android:codes="0"   android:keyLabel=""  />
+        <Key android:codes="0"   android:keyLabel=""  />
+        <Key android:codes="0"   android:keyLabel=""  />
+        <Key android:codes="0"   android:keyLabel=""  />
+        <Key android:codes="0"   android:keyLabel=""  android:keyEdgeFlags="right" />
+    </Row>
 
 </Keyboard>

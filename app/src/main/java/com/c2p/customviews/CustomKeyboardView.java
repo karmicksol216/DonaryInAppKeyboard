@@ -1,5 +1,6 @@
 package com.c2p.customviews;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -8,8 +9,12 @@ import android.graphics.drawable.Drawable;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.KeyboardView;
+import android.text.Editable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+
 
 import com.c2p.donaryKbd.R;
 
@@ -57,13 +62,14 @@ public class CustomKeyboardView extends KeyboardView {
             Log.e("KEY", "Drawing key with code " + key.codes[0]);
 
             if (key.codes[0] == 0) {
-                //-- for space around numeric keyboard, padding
-                Drawable dr = (Drawable) context.getResources().getDrawable(R.drawable.circle_black_key);
-                dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
-                dr.draw(canvas);
+                //-- for space around numeric keyboard, padding --
+                //Drawable dr = (Drawable) context.getResources().getDrawable(R.drawable.circle_black_key);
+                //dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
+                //dr.draw(canvas);
 
-            } else if (key.codes[0] == 16001 || key.codes[0] == 16002 || key.codes[0] == 16003  || key.codes[0] == 32 ) {
-                //-- for back arrow in numeric keyboard
+            } else if (key.codes[0] == 16001 || key.codes[0] == 16002 || key.codes[0] == 16003  || key.codes[0] == 32
+                || key.codes[0] == 17001 || key.codes[0] == 17002        ) {
+                //-- for back arrow in numeric keyboard --
                 Drawable dr = (Drawable) context.getResources().getDrawable(R.drawable.rounded_corner_silver_border);
                 dr.setBounds(key.x, key.y, key.x + key.width, key.y + key.height);
                 dr.draw(canvas);
@@ -82,15 +88,15 @@ public class CustomKeyboardView extends KeyboardView {
 
             if((key.codes[0]>=97 && key.codes[0]<=122) || key.codes[0] == 64 || key.codes[0] == 63)
             {
-                paint.setTextSize(42);// querty
+                paint.setTextSize(42);// querty abc
             }
             else if((key.codes[0]>=48 && key.codes[0]<=57) || key.codes[0] == 15004 )
             {
-                paint.setTextSize(62);//numeric
+                paint.setTextSize(52);//numeric
             }
             else if((key.codes[0]>=65 && key.codes[0]<=90) || key.codes[0] == 32 )
             {
-                paint.setTextSize(52);//ABC
+                paint.setTextSize(42); //ABC
             }
             else
             {
@@ -100,23 +106,29 @@ public class CustomKeyboardView extends KeyboardView {
             paint.setColor(Color.YELLOW);
 
             if (key.label != null) {
+                // key have text
                 canvas.drawText(key.label.toString(), key.x + (key.width / 2),
                         key.y + (key.height / 2)+20, paint);
             }
             else
             {
+                // key text is either blank or contains icon
                 int padding=0;
 
-                //--for ABC
+                //--for english ABC
                 if (key.codes[0] == 16001 || key.codes[0] == 16002 || key.codes[0] == 16003  ) {
+                    padding=10;
+                }
+
+                //--for hebrew ABC
+                if (key.codes[0] == 17001 || key.codes[0] == 17002 ) {
                     padding=10;
                 }
 
                 //--for Numeric
                 if (key.codes[0] == 15001 || key.codes[0] == 15002 || key.codes[0] == 15003 || key.codes[0] == 36|| key.codes[0] == -5 ) {
-                    padding=25;
+                    padding=20;
                 }
-
 
                 key.icon.setBounds(key.x+padding, key.y+padding, key.x + key.width-padding, key.y + key.height-padding);
                 key.icon.draw(canvas);

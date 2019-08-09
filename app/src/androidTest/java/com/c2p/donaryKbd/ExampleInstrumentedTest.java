@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.karmic.simplekeyboard", appContext.getPackageName());
+        assertEquals("com.c2p.donaryKbd", appContext.getPackageName());
     }
 }

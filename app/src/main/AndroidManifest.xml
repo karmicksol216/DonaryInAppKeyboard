@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.c2p.donaryKbd">
 
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.c2p.donaryKbd.Main2Activity"
+        <activity android:name=".Main2Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"
             >
@@ -25,7 +25,7 @@
          </activity>
 
 
-        <activity android:name="com.c2p.donaryKbd.MainActivity"
+        <activity android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"
             >
@@ -36,7 +36,7 @@
         </activity>
 
         <service
-            android:name="com.c2p.donaryKbd.SimpleIME"
+            android:name=".SimpleIME"
             android:label="@string/simple_ime"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <meta-data

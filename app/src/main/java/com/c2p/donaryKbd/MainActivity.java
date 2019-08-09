@@ -1,10 +1,17 @@
 package com.c2p.donaryKbd;
 
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.inputmethodservice.Keyboard;
+import android.inputmethodservice.KeyboardView;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,17 +23,27 @@ public class MainActivity extends AppCompatActivity {
 
         InputMethodManager imeManager = (InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
         imeManager.showInputMethodPicker();
-
-        //startActivity(new Intent("android.settings.INPUT_METHOD_SETTINGS"));
-
+        imeManager.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
 
     }
 
 
-    protected static void changekeyboard(String keyboardID, ContentResolver contentResolver) {
-        String oldDefaultKeyboard = Settings.Secure.getString(contentResolver, "default_input_method");
-        Settings.Secure.putString(contentResolver, "enabled_input_methods", keyboardID);
-        Settings.Secure.putString(contentResolver, "default_input_method", keyboardID);
-
+    /*@Override
+    public void onBackPressed() {
+    // super.onBackPressed();
+    // Not calling **super**, disables back button in current screen.
+        Toast.makeText(getApplicationContext(), "Back has been disabled in this project.", Toast.LENGTH_SHORT).show();
     }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+       //Toast.makeText(getApplicationContext(), "press" + keyCode, Toast.LENGTH_LONG).show();
+       if(keyCode==KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_SOFT_LEFT) {
+           return false;
+       }
+        // Disable back button..............
+        return true;
+    }*/
+
 }
