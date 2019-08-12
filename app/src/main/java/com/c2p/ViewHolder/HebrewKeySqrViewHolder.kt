@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 
 
-import com.c2p.donaryKbd.R
+import com.c2p.donaryInAppKeyboard.R
 
 
 class HebrewKeySqrViewHolder (inflater: LayoutInflater, parent: ViewGroup) :

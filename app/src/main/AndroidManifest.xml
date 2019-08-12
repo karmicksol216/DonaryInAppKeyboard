@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.c2p.donaryKbd">
+    package="com.c2p.donaryInAppKeyboard">
 
 
 
@@ -14,39 +14,19 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".Main2Activity"
+        <activity android:name="com.c2p.donaryInAppKeyboard.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize"
             >
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
          </activity>
 
 
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
-        <service
-            android:name=".SimpleIME"
-            android:label="@string/simple_ime"
-            android:permission="android.permission.BIND_INPUT_METHOD">
-            <meta-data
-                android:name="android.view.im"
-                android:resource="@xml/method" />
 
-            <intent-filter>
-                <action android:name="android.view.InputMethod" />
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>

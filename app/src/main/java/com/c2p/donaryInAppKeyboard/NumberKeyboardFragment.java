@@ -1,4 +1,4 @@
-package com.c2p.donaryKbd;
+package com.c2p.donaryInAppKeyboard;
 
 
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class NumericKBD1Fragment extends Fragment implements View.OnClickListener {
+public class NumberKeyboardFragment extends Fragment implements View.OnClickListener {
 
     private String title;
     private int page;
@@ -29,8 +29,8 @@ public class NumericKBD1Fragment extends Fragment implements View.OnClickListene
 
 
     // newInstance constructor for creating fragment with arguments
-    public static NumericKBD1Fragment newInstance(int page, String title) {
-        NumericKBD1Fragment fragmentFirst = new NumericKBD1Fragment();
+    public static NumberKeyboardFragment newInstance(int page, String title) {
+        NumberKeyboardFragment fragmentFirst = new NumberKeyboardFragment();
         Bundle args = new Bundle();
         args.putInt("someInt", page);
         args.putString("someTitle", title);

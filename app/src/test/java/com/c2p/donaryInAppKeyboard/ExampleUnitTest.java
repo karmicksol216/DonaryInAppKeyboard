@@ -1,4 +1,4 @@
-package com.c2p.donaryKbd;
+package com.c2p.donaryInAppKeyboard;
 
 import org.junit.Test;
 

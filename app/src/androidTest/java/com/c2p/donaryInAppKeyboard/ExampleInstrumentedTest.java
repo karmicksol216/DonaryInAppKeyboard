@@ -1,4 +1,4 @@
-package com.c2p.donaryKbd;
+package com.c2p.donaryInAppKeyboard;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

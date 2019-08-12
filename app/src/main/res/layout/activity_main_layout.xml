@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- top half will contains others screen -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/base_green"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/_32sdp">
+
+            </FrameLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <!-- bottom half , kbd layouts will appear here  -->
+    <LinearLayout
+        android:id="@+id/kbd_eng"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
+        android:background="#000000"
+        android:orientation="vertical"
+        >
+        <!--  Each fragments to be loaded in viewpage is an keyboard -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v4.view.ViewPager>
+
+    </LinearLayout>
+
+
+</LinearLayout>

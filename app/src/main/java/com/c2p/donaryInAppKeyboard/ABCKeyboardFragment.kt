@@ -1,4 +1,4 @@
-package com.c2p.donaryKbd
+package com.c2p.donaryInAppKeyboard
 
 
 import android.content.Context
@@ -14,7 +14,7 @@ import com.c2p.adapter.EnglishKBDAdapter
 
 
 
-class AlphabetKBD1Fragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
+class ABCKeyboardFragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
 
     var mContext: Context ?= null
     private var mActivity: AppCompatActivity? = null
@@ -27,8 +27,8 @@ class AlphabetKBD1Fragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
 
 
     // newInstance constructor for creating fragment with arguments
-    fun newInstance(page: Int, title: String): NumericKBD1Fragment {
-        val fragmentFirst = NumericKBD1Fragment()
+    fun newInstance(page: Int, title: String): NumberKeyboardFragment {
+        val fragmentFirst = NumberKeyboardFragment()
         val args = Bundle()
         args.putInt("someInt", page)
         args.putString("someTitle", title)
@@ -51,8 +51,8 @@ class AlphabetKBD1Fragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
         super.onViewCreated(view, savedInstanceState)
 
         rv=view.findViewById(R.id.rv_english) as RecyclerView
-        listner=this@AlphabetKBD1Fragment
-        adapter = EnglishKBDAdapter(context!!, listner as AlphabetKBD1Fragment )
+        listner=this@ABCKeyboardFragment
+        adapter = EnglishKBDAdapter(context!!, listner as ABCKeyboardFragment )
         layoutManager = GridLayoutManager(mContext, 6)
         rv!!.layoutManager = layoutManager
         rv!!.adapter = adapter

@@ -9,7 +9,7 @@ import java.lang.Exception
 import android.view.View
 import com.bumptech.glide.Glide
 import com.c2p.ViewHolder.EnglishKeySqrViewHolder
-import com.c2p.donaryKbd.R
+import com.c2p.donaryInAppKeyboard.R
 
 
 class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
