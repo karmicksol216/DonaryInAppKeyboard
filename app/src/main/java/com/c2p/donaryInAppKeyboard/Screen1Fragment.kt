@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -54,6 +55,18 @@ class Screen1Fragment : Fragment() , View.OnClickListener{
         edt2ll?.setOnClickListener(this@Screen1Fragment)
         edt3ll?.setOnClickListener(this@Screen1Fragment)
 
+
+        edt1?.setShowSoftInputOnFocus(false)
+        edt2?.setShowSoftInputOnFocus(false)
+        edt3?.setShowSoftInputOnFocus(false)
+
+        //-- this is required show that system keyboard dont popup while editext
+        //gets focus.
+
+        edt1?.setInputType(InputType.TYPE_NULL)
+        edt2?.setInputType(InputType.TYPE_NULL)
+        edt3?.setInputType(InputType.TYPE_NULL)
+
         return view
     }
 
@@ -68,23 +81,23 @@ class Screen1Fragment : Fragment() , View.OnClickListener{
         when (v.id) {
 
             R.id.edt1ll , R.id.edt1 -> {
-                (activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt = "1"
+                //(activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt = "1"
                 (activity as com.c2p.donaryInAppKeyboard.MainActivity).vpPager.setCurrentItem(0)//number
 
             }
             R.id.edt2ll , R.id.edt2-> {
-                (activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt = "2"
+                //(activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt = "2"
                 (activity as com.c2p.donaryInAppKeyboard.MainActivity).vpPager.setCurrentItem(1)//text
             }
             R.id.edt3ll,  R.id.edt3-> {
-                (activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt = "3"
+                //(activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt = "3"
                 (activity as com.c2p.donaryInAppKeyboard.MainActivity).vpPager.setCurrentItem(0)//number
             }
         }
 
 
         //---------identifies which edittext to handle ----
-        if ((activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt == "1") {
+        /*if ((activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt == "1") {
             (activity as com.c2p.donaryInAppKeyboard.MainActivity).edt = edt1
         }
         if ((activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt == "2") {
@@ -92,7 +105,7 @@ class Screen1Fragment : Fragment() , View.OnClickListener{
         }
         if ((activity as com.c2p.donaryInAppKeyboard.MainActivity).whichEdt == "3") {
             (activity as com.c2p.donaryInAppKeyboard.MainActivity).edt = edt3
-        }
+        }*/
 
     }
 
