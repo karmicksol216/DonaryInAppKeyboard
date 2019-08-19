@@ -63,9 +63,9 @@ class Screen1Fragment : Fragment() , View.OnClickListener{
         //-- this is required show that system keyboard dont popup while editext
         //gets focus.
 
-        edt1?.setInputType(InputType.TYPE_NULL)
+        /*edt1?.setInputType(InputType.TYPE_NULL)
         edt2?.setInputType(InputType.TYPE_NULL)
-        edt3?.setInputType(InputType.TYPE_NULL)
+        edt3?.setInputType(InputType.TYPE_NULL)*/
 
         return view
     }
