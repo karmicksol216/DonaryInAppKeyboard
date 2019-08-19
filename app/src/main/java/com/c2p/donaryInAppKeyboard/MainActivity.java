@@ -397,6 +397,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }).start();
 
+
         /*//12-hebrew , 18-numeric, 24-move left, 27-space
         if(pos==12) {
             //move to number
