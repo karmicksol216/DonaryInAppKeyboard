@@ -7,7 +7,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 
 
-import com.c2p.donaryInAppKeyboard.R
+import com.c2p.donaryInAppKeyboards.R
 
 
 class EnglishKeyViewHolder (inflater: LayoutInflater, parent: ViewGroup) :

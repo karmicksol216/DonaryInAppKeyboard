@@ -9,7 +9,7 @@ import java.lang.Exception
 import android.view.View
 import com.bumptech.glide.Glide
 import com.c2p.ViewHolder.HebrewKeySqrViewHolder
-import com.c2p.donaryInAppKeyboard.R
+import com.c2p.donaryInAppKeyboards.R
 
 
 class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -21,12 +21,7 @@ class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener
     private val TYPE_1 = 1
     private val TYPE_2 = 2
 
-    val alphabets2 = arrayOf<String>(
-            "\u05D0","\u05D1","\u05D2","\u05D3","\u05D4","\u05D5",
-            "\u05D6","\u05D7","\u05D8","\u05D9","\u05DA","\u05DB",
-            "*","\u05DC","\u05DE","\u05DF","\u05E0","\u05E1",
-            "*","\u05E2","\u05E3","\u05E4","\u05E5","\u05E6",
-            "<","\u05E7","\u05E8","\u2423","\u05E9","\u05EA")
+
 
     val alphabets = arrayOf<String>(
             "\u05D5","\u05D4","\u05D3","\u05D2","\u05D1","\u05D0",

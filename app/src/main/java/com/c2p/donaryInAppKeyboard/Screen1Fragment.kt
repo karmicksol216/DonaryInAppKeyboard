@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.LinearLayout
 import com.c2p.adapter.EnglishKBDAdapter
+import com.c2p.donaryInAppKeyboards.R
 
 import com.c2p.donaryInAppKeyboard.MainActivity as MainActivity1
 

@@ -13,7 +13,7 @@ import com.c2p.donaryInAppKeyboards.R;
 import com.c2p.listeners.OnKeyBoard;
 
 
-public class NumberKeyboardFragment extends Fragment implements View.OnClickListener {
+public class SymbolKeyboardFragment extends Fragment implements View.OnClickListener {
 
     private String title;
     private int page;
@@ -32,8 +32,8 @@ public class NumberKeyboardFragment extends Fragment implements View.OnClickList
 
 
     // newInstance constructor for creating fragment with arguments
-    public static NumberKeyboardFragment newInstance(int page, String title) {
-        NumberKeyboardFragment fragmentFirst = new NumberKeyboardFragment();
+    public static SymbolKeyboardFragment newInstance(int page, String title) {
+        SymbolKeyboardFragment fragmentFirst = new SymbolKeyboardFragment();
         Bundle args = new Bundle();
         args.putInt("someInt", page);
         args.putString("someTitle", title);
@@ -54,7 +54,7 @@ public class NumberKeyboardFragment extends Fragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_nbd1, container, false);
+        View view = inflater.inflate(R.layout.fragment_symb1, container, false);
 
         //---number keys-----------------
         row1_btn1 = (TextView) view.findViewById(R.id.row1_btn1);
@@ -112,6 +112,6 @@ public class NumberKeyboardFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        onKeyBoardlistener.onKeyPressed(v.getId());
+        onKeyBoardlistener.onSymbolKeyPressed(v.getId());
     }
 }
