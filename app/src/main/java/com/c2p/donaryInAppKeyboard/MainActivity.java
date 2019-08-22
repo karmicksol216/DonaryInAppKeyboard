@@ -1,6 +1,7 @@
 package com.c2p.donaryInAppKeyboard;
 
 import android.app.Instrumentation;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -19,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.c2p.adapter.OnSwipeTouchListener;
+import com.c2p.customviews.HorizontalViewPager;
 import com.c2p.donaryInAppKeyboards.R;
 import com.c2p.listeners.OnKeyBoard;
 
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     MyPagerAdapter adapterViewPager;
     //public EditText edt1,edt2,edt3;
-    ViewPager vpPager;
+    HorizontalViewPager vpPager;
     EditText edt;
     LinearLayout main;
 
@@ -57,28 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         main = (LinearLayout) findViewById(R.id.main);
         edt = new EditText(this);
 
-        vpPager = (ViewPager) findViewById(R.id.vpPager);
+        vpPager = (HorizontalViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
-
-        /*main.setOnTouchListener(new OnSwipeTouchListener(this) {
-
-            public void onSwipeUp() {
-                Toast.makeText(getApplicationContext(), "UP", Toast.LENGTH_SHORT).show();
-                //adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
-                //vpPager.setAdapter(adapterViewPager);
-                //vpPager.setCurrentItem(4);//hebrew
-            }
-            public void onSwipeRight() {
-                //Toast.makeText(getApplicationContext(), "RIGHT SWIPE", Toast.LENGTH_SHORT).show();
-            }
-            public void onSwipeLeft() {
-                //Toast.makeText(getApplicationContext(), "LEFT SWIPE", Toast.LENGTH_SHORT).show();
-            }
-            public void onSwipeDown() {
-                Toast.makeText(getApplicationContext(), "DOWN", Toast.LENGTH_SHORT).show();
-            }
-        });*/
 
 
         Fragment fm=new Screen1Fragment();
@@ -100,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 4;
+        private static int NUM_ITEMS = 3;
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -117,16 +100,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                     return NumberKeyboardFragment.newInstance(0, "99");
+                     return FragmentParentOne.newInstance(0, Color.BLUE);
                 case 1:
-                    return new ABCKeyboardFragment();
-                    //return SecondFragment.newInstance(1, "Page # 2");
+                    return FragmentParentTwo.newInstance(0, Color.BLUE);
                 case 2:
-                    return new HebrewAbcKeybardFragment();
-                    //return FirstFragment.newInstance(1, "Page # 1");
-                case 3:
-                    return SymbolKeyboardFragment.newInstance(0, "Page # 1");
-                //return FirstFragment.newInstance(1, "Page # 1");
+                    return FragmentParentThree.newInstance(0, Color.BLUE);
                 default:
                     return null;
             }
@@ -155,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    //##############ALL KEYBOARD CALLBACKS#####################3
+    //############## ****** ALL KEYBOARD CALLBACKS ****** #####################3
     @Override
     public void onKeyPressed(final Integer Id) {
        // numeric keypress
@@ -368,6 +346,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onSymbolKeyPressed(final Integer Id) {
 
 
+        View view= this.getCurrentFocus();
+        final InputConnection ic = view.onCreateInputConnection(new EditorInfo());//getCurrentInputConnection();
+
+        if(ic ==null)
+            return;
+
+        switch (Id) {
+            case  R.id.row1_btn1:      ic.commitText("(", 0);      ; break;
+            case  R.id.row1_btn2:      ic.commitText(")", 0);     ; break;
+            case  R.id.row1_btn3:      ic.commitText("*", 0);      ; break;
+
+            case  R.id.row2_btn1:      ic.commitText("%", 0);      ; break;
+            case  R.id.row2_btn2:      ic.commitText("&", 0);      ; break;
+            case  R.id.row2_btn3:      ic.commitText("'", 0);      ; break;
+
+            case  R.id.row3_btn1:      ic.commitText("+", 0);      ; break;
+            case  R.id.row3_btn2:      ic.commitText("@", 0);      ; break;
+            case  R.id.row3_btn3:      ic.commitText("-", 0);     ; break;
+        }
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -376,18 +374,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int keycode = KeyEvent.KEYCODE_0;
 
                 switch (Id) {
-                    case R.id.row4_btn2:      inst.sendStringSync("$");      ; break;
-                    case  R.id.row1_btn1:     inst.sendStringSync("(");      ; break;
-                    case  R.id.row1_btn2:     inst.sendStringSync(")");      ; break;
-                    /*case  R.id.row1_btn3:     keycode = KeyEvent.KEYCODE_3      ; break;
-                    case  R.id.row2_btn1:     keycode = KeyEvent.KEYCODE_4      ; break;
-                    case  R.id.row2_btn2:     keycode = KeyEvent.KEYCODE_5      ; break;
-                    case  R.id.row2_btn3:     keycode = KeyEvent.KEYCODE_6      ; break;
-                    case  R.id.row3_btn1:     keycode = KeyEvent.KEYCODE_7      ; break;
-                    case  R.id.row3_btn2:     keycode = KeyEvent.KEYCODE_8      ; break;
-                    case  R.id.row3_btn3:     keycode = KeyEvent.KEYCODE_9      ; break;
-                    case  R.id.row4_btn1:     keycode = KeyEvent.KEYCODE_DEL    ; break;
-                    case  R.id.row4_btn3:     keycode = KeyEvent.KEYCODE_ENTER  ; break;*/
+
+                    case  R.id.row4_btn1:
+                                            keycode = KeyEvent.KEYCODE_DEL;
+                                            inst.sendKeyDownUpSync(keycode);     ; break;
+                    case  R.id.row4_btn3:
+                                            keycode = KeyEvent.KEYCODE_ENTER;
+                                            inst.sendKeyDownUpSync(keycode);   ; break;
                 }
 
             }
@@ -395,5 +388,138 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
+    @Override
+    public void onQwertyKeyPressed(final Integer Id) {
+
+
+        View view= this.getCurrentFocus();
+        final InputConnection ic = view.onCreateInputConnection(new EditorInfo());//getCurrentInputConnection();
+
+        if(ic ==null)
+            return;
+
+        switch (Id) {
+            case  R.id.row1_btn0:      ic.commitText("q", 0);      ; break;
+            case  R.id.row1_btn1:      ic.commitText("e", 0);     ; break;
+            case  R.id.row1_btn2:      ic.commitText("t", 0);      ; break;
+            case  R.id.row1_btn3:      ic.commitText("u", 0);      ; break;
+            case  R.id.row1_btn4:      ic.commitText("o", 0);      ; break;
+
+            case  R.id.row2_btn0:      ic.commitText("w", 0);      ; break;
+            case  R.id.row2_btn1:      ic.commitText("r", 0);     ; break;
+            case  R.id.row2_btn2:      ic.commitText("y", 0);      ; break;
+            case  R.id.row2_btn3:      ic.commitText("i", 0);      ; break;
+            case  R.id.row2_btn4:      ic.commitText("p", 0);      ; break;
+
+            case  R.id.row3_btn0:      ic.commitText("a", 0);      ; break;
+            case  R.id.row3_btn1:      ic.commitText("d", 0);     ; break;
+            case  R.id.row3_btn2:      ic.commitText("g", 0);      ; break;
+            case  R.id.row3_btn3:      ic.commitText("j", 0);      ; break;
+            case  R.id.row3_btn4:      ic.commitText("l", 0);      ; break;
+
+            case  R.id.row4_btn0:      ic.commitText("s", 0);      ; break;
+            case  R.id.row4_btn1:      ic.commitText("f", 0);     ; break;
+            case  R.id.row4_btn2:      ic.commitText("h", 0);      ; break;
+            case  R.id.row4_btn3:      ic.commitText("k", 0);      ; break;
+            case  R.id.row4_btn4:      ic.commitText(",", 0);      ; break;
+
+            case  R.id.row5_btn0:      ic.commitText("z", 0);      ; break;
+            case  R.id.row5_btn1:      ic.commitText("c", 0);     ; break;
+            case  R.id.row5_btn2:      ic.commitText("b", 0);      ; break;
+            case  R.id.row5_btn3:      ic.commitText("m", 0);      ; break;
+            case  R.id.row5_btn4:      ic.commitText(".", 0);      ; break;
+
+            case  R.id.row6_btn0:      ic.commitText("x", 0);      ; break;
+            case  R.id.row6_btn1:      ic.commitText("v", 0);     ; break;
+            case  R.id.row6_btn2:      ic.commitText("n", 0);      ; break;
+            case  R.id.row6_btn3:      ic.commitText("?", 0);      ; break;
+        }
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Instrumentation inst = new Instrumentation();//KeyEvent.KEYCODE_SHIFT_LEFT
+                int keycode = KeyEvent.KEYCODE_0;
+
+                switch (Id) {
+
+                    case  R.id.row7_btn4:
+                        keycode = KeyEvent.KEYCODE_DEL;
+                        inst.sendKeyDownUpSync(keycode);     ; break;
+                }
+
+            }
+        }).start();
+
+    }
+
+
+    @Override
+    public void onHebrewQwertyKeyPressed(final Integer Id) {
+
+
+        View view= this.getCurrentFocus();
+        final InputConnection ic = view.onCreateInputConnection(new EditorInfo());//getCurrentInputConnection();
+
+        if(ic ==null)
+            return;
+
+        switch (Id) {
+            case  R.id.row1_btn0:      ic.commitText("ק", 0);      ; break;
+            case  R.id.row1_btn1:      ic.commitText("א", 0);     ; break;
+            case  R.id.row1_btn2:      ic.commitText("ו", 0);      ; break;
+            case  R.id.row1_btn3:      ic.commitText("ם", 0);      ; break;
+            case  R.id.row1_btn4:      ic.commitText("פ", 0);      ; break;
+
+            case  R.id.row2_btn0:      ic.commitText("ר", 0);      ; break;
+            case  R.id.row2_btn1:      ic.commitText("ט", 0);     ; break;
+            case  R.id.row2_btn2:      ic.commitText("ן", 0);      ; break;
+            case  R.id.row2_btn3:      ic.commitText("ך", 0);      ; break;
+            //case  R.id.row2_btn4:      ic.commitText("p", 0);      ; break;
+
+            case  R.id.row3_btn0:      ic.commitText("a", 0);      ; break;
+            case  R.id.row3_btn1:      ic.commitText("d", 0);     ; break;
+            case  R.id.row3_btn2:      ic.commitText("g", 0);      ; break;
+            case  R.id.row3_btn3:      ic.commitText("j", 0);      ; break;
+            case  R.id.row3_btn4:      ic.commitText("l", 0);      ; break;
+
+            case  R.id.row4_btn0:      ic.commitText("s", 0);      ; break;
+            case  R.id.row4_btn1:      ic.commitText("f", 0);     ; break;
+            case  R.id.row4_btn2:      ic.commitText("h", 0);      ; break;
+            case  R.id.row4_btn3:      ic.commitText("k", 0);      ; break;
+            case  R.id.row4_btn4:      ic.commitText(",", 0);      ; break;
+
+            case  R.id.row5_btn0:      ic.commitText("z", 0);      ; break;
+            case  R.id.row5_btn1:      ic.commitText("c", 0);     ; break;
+            case  R.id.row5_btn2:      ic.commitText("b", 0);      ; break;
+            case  R.id.row5_btn3:      ic.commitText("m", 0);      ; break;
+            case  R.id.row5_btn4:      ic.commitText(".", 0);      ; break;
+
+            case  R.id.row6_btn0:      ic.commitText("x", 0);      ; break;
+            case  R.id.row6_btn1:      ic.commitText("v", 0);     ; break;
+            case  R.id.row6_btn2:      ic.commitText("n", 0);      ; break;
+            case  R.id.row6_btn3:      ic.commitText("?", 0);      ; break;
+        }
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Instrumentation inst = new Instrumentation();//KeyEvent.KEYCODE_SHIFT_LEFT
+                int keycode = KeyEvent.KEYCODE_0;
+
+                switch (Id) {
+
+                    case  R.id.row7_btn4:
+                        keycode = KeyEvent.KEYCODE_DEL;
+                        inst.sendKeyDownUpSync(keycode);     ; break;
+                }
+
+            }
+        }).start();
+
+    }
 
 }

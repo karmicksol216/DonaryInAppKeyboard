@@ -49,11 +49,11 @@
         android:orientation="vertical"
         >
         <!--  Each fragments to be loaded in viewpage is an keyboard -->
-        <android.support.v4.view.ViewPager
+        <com.c2p.customviews.HorizontalViewPager
             android:id="@+id/vpPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        </android.support.v4.view.ViewPager>
+        </com.c2p.customviews.HorizontalViewPager>
 
     </LinearLayout>
 

@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#000000"
-        android:paddingTop="20dp"
+        android:paddingTop="5dp"
         android:orientation="vertical"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         >
 
         <!-- Kbd numeric row1 -->
@@ -288,14 +288,12 @@
                 android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
-                <TextView
+                <ImageView
                     android:id="@+id/row4_btn_cross"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="\u274C"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/kbd_number_font"
-                    android:textColor="@color/kbd_red"
+                    android:src="@drawable/cross_icon"
+                    android:padding="@dimen/_6sdp"
                     android:background="@drawable/circle_cyan"
                     android:gravity="center_horizontal|center_vertical"/>
             </LinearLayout>

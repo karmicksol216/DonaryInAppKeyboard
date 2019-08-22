@@ -23,8 +23,8 @@ public class SymbolKeyboardFragment extends Fragment implements View.OnClickList
     TextView row3_btn1,row3_btn2,row3_btn3;
     TextView row4_btn2,row4_btn3;
 
-    TextView row1_btn_dollar,row4_btn_cross;
-    ImageView row2_btn_search,row3_btn_menu, row4_btn1;
+    TextView row1_btn_dollar;
+    ImageView row4_btn_cross, row2_btn_search,row3_btn_menu, row4_btn1;
 
     OnKeyBoard onKeyBoardlistener;
 
@@ -97,7 +97,7 @@ public class SymbolKeyboardFragment extends Fragment implements View.OnClickList
         row1_btn_dollar = (TextView) view.findViewById(R.id.row1_btn_dollar);
         row2_btn_search = (ImageView) view.findViewById(R.id.row2_btn_search);
         row3_btn_menu = (ImageView) view.findViewById(R.id.row3_btn_menu);
-        row4_btn_cross = (TextView) view.findViewById(R.id.row4_btn_cross);
+        row4_btn_cross = (ImageView) view.findViewById(R.id.row4_btn_cross);
         row4_btn1 = (ImageView) view.findViewById(R.id.row4_btn1);
 
         row1_btn_dollar.setOnClickListener(this);

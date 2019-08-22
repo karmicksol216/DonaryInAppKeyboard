@@ -6,4 +6,6 @@ public interface OnKeyBoard {
     void onAlphaKeyPressed(Integer  value);
     void onHebrewKeyPressed(Integer  value);
     void onSymbolKeyPressed(Integer value);
+    void onQwertyKeyPressed(Integer  value);
+    void onHebrewQwertyKeyPressed(Integer  value);
 }
