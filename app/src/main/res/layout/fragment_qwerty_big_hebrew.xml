@@ -12,7 +12,6 @@
         android:background="#000000"
         android:paddingTop="1dp"
         android:orientation="vertical"
-
         android:layout_marginRight="@dimen/_1sdp"
         >
 
@@ -204,26 +203,7 @@
                     android:textColor="@color/kbd_yellow"
                     android:gravity="center_horizontal|center_vertical"/>
             </LinearLayout>
-
-            <!--<LinearLayout
-                android:id="@+id/row2_btn4_ll"
-                android:layout_width="0dp"
-                android:layout_weight="0.20"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/row2_btn4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" "
-                    android:textStyle="bold"
-                    android:background="#000000"
-                    android:textSize="@dimen/kbd_qwerty_font"
-                    android:textColor="@color/kbd_yellow"
-                    android:gravity="center_horizontal|center_vertical"/>
-            </LinearLayout>-->
-
-        </LinearLayout>
+       </LinearLayout>
 
         <!-- Kbd  Qwerty big row3 -->
         <LinearLayout
@@ -247,7 +227,7 @@
                     android:id="@+id/row3_btn0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="a"
+                    android:text="ש"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -266,7 +246,7 @@
                     android:id="@+id/row3_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="d"
+                    android:text="ג"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -284,7 +264,7 @@
                     android:id="@+id/row3_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="g"
+                    android:text="ע"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -302,7 +282,7 @@
                     android:id="@+id/row3_btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="j"
+                    android:text="ח"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -320,7 +300,7 @@
                     android:id="@+id/row3_btn4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="l"
+                    android:text="ף"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -335,8 +315,8 @@
             android:id="@+id/row4"
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:paddingTop="@dimen/_1sdp"
             android:paddingBottom="@dimen/_1sdp"
             android:layout_gravity="center_horizontal"
@@ -345,14 +325,14 @@
             <LinearLayout
                 android:id="@+id/row4_btn0_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row4_btn0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="s"
+                    android:text="ד"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -364,14 +344,14 @@
             <LinearLayout
                 android:id="@+id/row4_btn1_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row4_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="f"
+                    android:text="כ"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -382,14 +362,14 @@
             <LinearLayout
                 android:id="@+id/row4_btn2_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row4_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="h"
+                    android:text="י"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -400,32 +380,14 @@
             <LinearLayout
                 android:id="@+id/row4_btn3_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row4_btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="k"
-                    android:textStyle="bold"
-                    android:background="@drawable/circle_black_key"
-                    android:textSize="@dimen/kbd_qwerty_font"
-                    android:textColor="@color/kbd_yellow"
-                    android:gravity="center_horizontal|center_vertical"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/row4_btn4_ll"
-                android:layout_width="0dp"
-                android:layout_weight="0.20"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/row4_btn4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=","
+                    android:text="ל"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -457,7 +419,7 @@
                     android:id="@+id/row5_btn0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="z"
+                    android:text="ז"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -476,7 +438,7 @@
                     android:id="@+id/row5_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="c"
+                    android:text="ב"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -494,7 +456,7 @@
                     android:id="@+id/row5_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="b"
+                    android:text="נ"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -512,7 +474,7 @@
                     android:id="@+id/row5_btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="m"
+                    android:text="צ"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -530,7 +492,7 @@
                     android:id="@+id/row5_btn4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="."
+                    android:text="ץ"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -545,8 +507,8 @@
             android:id="@+id/row6"
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:paddingTop="@dimen/_1sdp"
             android:paddingBottom="@dimen/_1sdp"
             android:layout_gravity="center_horizontal"
@@ -555,33 +517,32 @@
             <LinearLayout
                 android:id="@+id/row6_btn0_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row6_btn0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="x"
+                    android:text="ס"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
                     android:textColor="@color/kbd_yellow"
-
                     android:gravity="center_horizontal|center_vertical"/>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/row6_btn1_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row6_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="v"
+                    android:text="ה"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -592,14 +553,14 @@
             <LinearLayout
                 android:id="@+id/row6_btn2_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row6_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="n"
+                    android:text="מ"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -610,32 +571,14 @@
             <LinearLayout
                 android:id="@+id/row6_btn3_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.25"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row6_btn3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="\?"
-                    android:textStyle="bold"
-                    android:background="@drawable/circle_black_key"
-                    android:textSize="@dimen/kbd_qwerty_font"
-                    android:textColor="@color/kbd_yellow"
-                    android:gravity="center_horizontal|center_vertical"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/row6_btn4_ll"
-                android:layout_width="0dp"
-                android:layout_weight="0.20"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/row6_btn4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*"
+                    android:text="ת"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
@@ -650,8 +593,8 @@
             android:id="@+id/row7"
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:paddingTop="@dimen/_1sdp"
             android:paddingBottom="@dimen/_1sdp"
             android:layout_gravity="center_horizontal"
@@ -660,35 +603,35 @@
             <LinearLayout
                 android:id="@+id/row7_btn0_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.30"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row7_btn0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="⇑"
+                    android:text=""
                     android:textStyle="bold"
-                    android:background="@drawable/circle_black_key"
+                    android:background="@drawable/cross_heb"
                     android:textSize="@dimen/kbd_qwerty_font"
                     android:textColor="@color/kbd_yellow"
-
                     android:gravity="center_horizontal|center_vertical"/>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/row7_btn1_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.30"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row7_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="/"
+                    android:text=""
                     android:textStyle="bold"
-                    android:background="@drawable/circle_black_key"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/spbar"
                     android:textSize="@dimen/kbd_qwerty_font"
                     android:textColor="@color/kbd_yellow"
                     android:gravity="center_horizontal|center_vertical"/>
@@ -697,50 +640,14 @@
             <LinearLayout
                 android:id="@+id/row7_btn2_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.30"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/row7_btn2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="\u2423"
-                    android:textStyle="bold"
-                    android:background="@drawable/circle_black_key"
-                    android:textSize="@dimen/kbd_qwerty_font"
-                    android:textColor="@color/kbd_yellow"
-                    android:gravity="center_horizontal|center_vertical"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/row7_btn3_ll"
-                android:layout_width="0dp"
-                android:layout_weight="0.20"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/row7_btn3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="\u23CE"
-                    android:textStyle="bold"
-                    android:background="@drawable/circle_black_key"
-                    android:textSize="@dimen/kbd_qwerty_font"
-                    android:textColor="@color/kbd_yellow"
-                    android:gravity="center_horizontal|center_vertical"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/row7_btn4_ll"
-                android:layout_width="0dp"
-                android:layout_weight="0.20"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/row7_btn4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⇦"
+                    android:text="&gt;"
                     android:textStyle="bold"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"

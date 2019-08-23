@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    //############## ****** ALL KEYBOARD CALLBACKS ****** #####################3
+    //############## ****** ALL KEYBOARD CALLBACKS  ** start****** #####################
     @Override
     public void onKeyPressed(final Integer Id) {
        // numeric keypress
@@ -152,8 +152,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.row3_btn1:     ic.commitText("7", 0);     ; break;
             case  R.id.row3_btn2:     ic.commitText("8", 0);     ; break;
             case  R.id.row3_btn3:     ic.commitText("9", 0);     ; break;
-            case  R.id.row4_btn2:     ic.commitText("0", 0);     ; break;
+            case  R.id.row4_space:    ic.commitText(" ", 0);     ; break;
+            case  R.id.row4_btn1:     ic.commitText("0", 0);     ; break;
+            case  R.id.row4_btn2:     ic.commitText(".", 0);     ; break;
 
+            case  R.id.row2_btn_search:
+                performSearch();
+                break;
+
+            case  R.id.row3_btn_menu:
+                openMenu();
+                break;
         }
 
 
@@ -165,8 +174,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Instrumentation inst = new Instrumentation();
 
                 switch (Id) {
-                    case R.id.row1_btn_dollar:      keycode = KeyEvent.KEYCODE_NUMPAD_0 ;inst.sendKeyDownUpSync(keycode);     ; break;
-                    case  R.id.row4_btn1:     keycode = KeyEvent.KEYCODE_DEL ;inst.sendKeyDownUpSync(keycode);   ; break;
+                    case R.id.row1_back:      keycode = KeyEvent.KEYCODE_DEL ;inst.sendKeyDownUpSync(keycode);     ; break;
+
                     case  R.id.row4_btn3:     keycode = KeyEvent.KEYCODE_ENTER ; inst.sendKeyDownUpSync(keycode); ; break;
                 }
 
@@ -179,23 +188,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onAlphaKeyPressed(final Integer pos) {
 
         // for ABC keyboard input order
-        String alphabets[] = {  "A","B","C","D","E","F",
+        /*String alphabets2[] = {  "A","B","C","D","E","F",
                                 "G","H","I","J","K","L",
                                 "*","M","N","O","P","Q",
                                 "*","R","S","T","U","V",
                                 "<","W","X","\u2423","Y","Z"
-                            };
+                            };*/
+
+        String alphabets[]  ={
+                    "A", "B", "C", "D", "E", "*",
+                    "F", "G", "H", "I", "J", "K",
+                    "L", "M", "N", "O", "P", "Q",
+                    "R", "S", "T", "U", "V", "W",
+                    "X", "Y", "Z", "\u2423", ">", " "
+        };
 
         View view= this.getCurrentFocus();
         final InputConnection ic = view.onCreateInputConnection(new EditorInfo());//getCurrentInputConnection();
 
         //12-hebrew , 18-numeric, 24-move left, 27-space
-        if(pos==12) {
-           vpPager.setCurrentItem(2);//hebrew
-        } else if(pos==18) {
-            vpPager.setCurrentItem(0);//numeric
-        }else if(pos==24) {
-           vpPager.setCurrentItem(0);//left-numeric
+        if(pos==5) {
+            ic.deleteSurroundingText(1, 0);
         }else if(pos==27) {
             ic.commitText(" ", 1);
         } else {
@@ -364,6 +377,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.row3_btn1:      ic.commitText("+", 0);      ; break;
             case  R.id.row3_btn2:      ic.commitText("@", 0);      ; break;
             case  R.id.row3_btn3:      ic.commitText("-", 0);     ; break;
+
+            case  R.id.row4_space:     ic.commitText(" ", 0);     ; break;
+            case  R.id.row4_btn1:      ic.commitText("0", 0);     ; break;
+            case  R.id.row4_btn2:      ic.commitText(".", 0);     ; break;
+
+            case  R.id.row2_btn_search:
+                performSearch();
+                break;
+
+            case  R.id.row3_btn_menu:
+                openMenu();
+                break;
         }
 
         new Thread(new Runnable() {
@@ -374,14 +399,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int keycode = KeyEvent.KEYCODE_0;
 
                 switch (Id) {
+                    case R.id.row1_back:      keycode = KeyEvent.KEYCODE_DEL ;inst.sendKeyDownUpSync(keycode);     ; break;
 
-                    case  R.id.row4_btn1:
-                                            keycode = KeyEvent.KEYCODE_DEL;
-                                            inst.sendKeyDownUpSync(keycode);     ; break;
-                    case  R.id.row4_btn3:
-                                            keycode = KeyEvent.KEYCODE_ENTER;
-                                            inst.sendKeyDownUpSync(keycode);   ; break;
+                    case  R.id.row4_btn3:     keycode = KeyEvent.KEYCODE_ENTER ; inst.sendKeyDownUpSync(keycode); ; break;
                 }
+
 
             }
         }).start();
@@ -477,30 +499,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.row2_btn1:      ic.commitText("ט", 0);     ; break;
             case  R.id.row2_btn2:      ic.commitText("ן", 0);      ; break;
             case  R.id.row2_btn3:      ic.commitText("ך", 0);      ; break;
-            //case  R.id.row2_btn4:      ic.commitText("p", 0);      ; break;
 
-            case  R.id.row3_btn0:      ic.commitText("a", 0);      ; break;
-            case  R.id.row3_btn1:      ic.commitText("d", 0);     ; break;
-            case  R.id.row3_btn2:      ic.commitText("g", 0);      ; break;
-            case  R.id.row3_btn3:      ic.commitText("j", 0);      ; break;
-            case  R.id.row3_btn4:      ic.commitText("l", 0);      ; break;
 
-            case  R.id.row4_btn0:      ic.commitText("s", 0);      ; break;
-            case  R.id.row4_btn1:      ic.commitText("f", 0);     ; break;
-            case  R.id.row4_btn2:      ic.commitText("h", 0);      ; break;
-            case  R.id.row4_btn3:      ic.commitText("k", 0);      ; break;
-            case  R.id.row4_btn4:      ic.commitText(",", 0);      ; break;
+            case  R.id.row3_btn0:      ic.commitText("ש", 0);      ; break;
+            case  R.id.row3_btn1:      ic.commitText("ג", 0);     ; break;
+            case  R.id.row3_btn2:      ic.commitText("ע", 0);      ; break;
+            case  R.id.row3_btn3:      ic.commitText("ח", 0);      ; break;
+            case  R.id.row3_btn4:      ic.commitText("ף", 0);      ; break;
 
-            case  R.id.row5_btn0:      ic.commitText("z", 0);      ; break;
-            case  R.id.row5_btn1:      ic.commitText("c", 0);     ; break;
-            case  R.id.row5_btn2:      ic.commitText("b", 0);      ; break;
-            case  R.id.row5_btn3:      ic.commitText("m", 0);      ; break;
-            case  R.id.row5_btn4:      ic.commitText(".", 0);      ; break;
+            case  R.id.row4_btn0:      ic.commitText("ד", 0);      ; break;
+            case  R.id.row4_btn1:      ic.commitText("כ", 0);     ; break;
+            case  R.id.row4_btn2:      ic.commitText("י", 0);      ; break;
+            case  R.id.row4_btn3:      ic.commitText("ל", 0);      ; break;
 
-            case  R.id.row6_btn0:      ic.commitText("x", 0);      ; break;
-            case  R.id.row6_btn1:      ic.commitText("v", 0);     ; break;
-            case  R.id.row6_btn2:      ic.commitText("n", 0);      ; break;
-            case  R.id.row6_btn3:      ic.commitText("?", 0);      ; break;
+
+            case  R.id.row5_btn0:      ic.commitText("ז", 0);      ; break;
+            case  R.id.row5_btn1:      ic.commitText("ב", 0);     ; break;
+            case  R.id.row5_btn2:      ic.commitText("נ", 0);      ; break;
+            case  R.id.row5_btn3:      ic.commitText("צ", 0);      ; break;
+            case  R.id.row5_btn4:      ic.commitText("ץ", 0);      ; break;
+
+            case  R.id.row6_btn0:      ic.commitText("ס", 0);      ; break;
+            case  R.id.row6_btn1:      ic.commitText("ה", 0);     ; break;
+            case  R.id.row6_btn2:      ic.commitText("מ", 0);      ; break;
+            case  R.id.row6_btn3:      ic.commitText("ת", 0);      ; break;
+
+            case  R.id.row7_btn1:      ic.commitText(" ", 0);      ; break;
         }
 
         new Thread(new Runnable() {
@@ -512,8 +536,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 switch (Id) {
 
-                    case  R.id.row7_btn4:
+                    case  R.id.row7_btn0:
                         keycode = KeyEvent.KEYCODE_DEL;
+                        inst.sendKeyDownUpSync(keycode);     ; break;
+
+                    case  R.id.row7_btn2:
+                        keycode = KeyEvent.KEYCODE_ENTER;
                         inst.sendKeyDownUpSync(keycode);     ; break;
                 }
 
@@ -522,4 +550,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    //<<<<######### ****** ALL KEYBOARD CALLBACKS  ** end ****** #####################
+
+
+
+
+    public void performSearch(){
+        /* search operation goes here */
+        Toast.makeText(this,"Search - To Do",Toast.LENGTH_SHORT).show();
+    }
+
+    public void openMenu(){
+        /* opens menu */
+        Toast.makeText(this,"Opens Menu - To Do",Toast.LENGTH_SHORT).show();
+    }
 }

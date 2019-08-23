@@ -21,10 +21,10 @@ public class NumberKeyboardFragment extends Fragment implements View.OnClickList
     TextView row1_btn1,row1_btn2,row1_btn3;
     TextView row2_btn1,row2_btn2,row2_btn3;
     TextView row3_btn1,row3_btn2,row3_btn3;
-    TextView row4_btn2,row4_btn3;
+    TextView row4_btn1,row4_btn2, row4_btn3, row4_space;
 
-    TextView row1_btn_dollar;
-    ImageView row4_btn_cross, row2_btn_search,row3_btn_menu, row4_btn1;
+
+    ImageView row1_back, row2_btn_search, row3_btn_menu;
 
     OnKeyBoard onKeyBoardlistener;
 
@@ -86,25 +86,27 @@ public class NumberKeyboardFragment extends Fragment implements View.OnClickList
         row3_btn3.setOnClickListener(this);
 
 
+        row4_btn1 = (TextView) view.findViewById(R.id.row4_btn1);
+        row4_btn1.setOnClickListener(this);
+
         row4_btn2 = (TextView) view.findViewById(R.id.row4_btn2);
         row4_btn2.setOnClickListener(this);
 
         row4_btn3 = (TextView) view.findViewById(R.id.row4_btn3);
         row4_btn3.setOnClickListener(this);
 
-        //--action keys
+        row4_space = (TextView) view.findViewById(R.id.row4_space);
+        row4_space.setOnClickListener(this);
 
-        row1_btn_dollar = (TextView) view.findViewById(R.id.row1_btn_dollar);
+        //----------------action keys---------------------
+
+        row1_back = (ImageView) view.findViewById(R.id.row1_back);
         row2_btn_search = (ImageView) view.findViewById(R.id.row2_btn_search);
         row3_btn_menu = (ImageView) view.findViewById(R.id.row3_btn_menu);
-        row4_btn_cross = (ImageView) view.findViewById(R.id.row4_btn_cross);
-        row4_btn1 = (ImageView) view.findViewById(R.id.row4_btn1);
 
-        row1_btn_dollar.setOnClickListener(this);
+        row1_back.setOnClickListener(this);
         row2_btn_search.setOnClickListener(this);
         row3_btn_menu.setOnClickListener(this);
-        row4_btn_cross.setOnClickListener(this);
-        row4_btn1.setOnClickListener(this);
 
 
         return view;

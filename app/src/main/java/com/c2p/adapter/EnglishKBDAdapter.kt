@@ -21,7 +21,13 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
     private val TYPE_1 = 1
     private val TYPE_2 = 2
 
-    val alphabets = arrayOf<String>("A","B","C","D","E","F","G","H","I","J","K","L","*","M","N","O","P","Q","*","R","S","T","U","V","<","W","X","\u2423","Y","Z")
+    val alphabets = arrayOf<String>(
+            "A","B","C","D","E","*",
+            "F","G","H","I","J","K",
+            "L","M","N","O","P","Q",
+            "R","S","T","U","V","W",
+            "X","Y","Z","\u2423",">"," "
+            )
 
     private var selectedPosition = -1
 
@@ -40,7 +46,7 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
 
         var v:View?=null
 
-        if (viewType == TYPE_1) { // for 1
+        if (viewType == TYPE_1) { // for Square
             return EnglishKeySqrViewHolder(inflater,view)
         } else { // for email layout
             return EnglishKeyViewHolder(inflater,view)
@@ -50,16 +56,16 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
     }
 
     override fun getItemViewType(position: Int): Int {
-         if (position==12 || position==18) {
-             return TYPE_1
+         if (position==5 || position==27) {
+             return TYPE_1 //square
 
         } else {
-             return TYPE_2
+             return TYPE_2 //circular
         }
     }
     override fun getItemCount(): Int {
         //return list!!.size
-        return 30
+        return alphabets.size-1
     }
 
 
@@ -73,17 +79,23 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
             var view:  EnglishKeySqrViewHolder=holder as EnglishKeySqrViewHolder
             try {
                 //view.btn1_img!!.text = alphabets.get(position)
-                if(position== 12){
+                if(position== 5){
                     Glide.with(context!!)
-                            .load(R.drawable.hebrew_icon)
+                            .load(R.drawable.back34)
+                            .override(40, 40)
                             .into(view.btn1_img!!);
                 }
-                if(position==18){
+                if(position==27){
                     Glide.with(context!!)
-                            .load(R.drawable.number_icon)
+                            .load(R.drawable.spbar_big)
+                            .override(160, 90)
                             .into(view.btn1_img!!);
+
                 }
             }catch (e:Exception){ e.printStackTrace()}
+
+
+
 
             view.selectalphabet!!.setOnClickListener {
                 selectedPosition=position;
@@ -95,8 +107,13 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
         } else {
             //(viewHolder as EmailViewHolder).setEmailDetails(employees.get(position))
             var view:  EnglishKeyViewHolder=holder as EnglishKeyViewHolder
+
             try {
                 view.btn1_txt!!.text = alphabets.get(position)
+                if(position==29){
+                    view.btn1_txt!!.background=context?.getResources()!!.getDrawable(R.drawable.circle_black_key);
+                }
+
             }catch (e:Exception){ e.printStackTrace()}
 
             view.selectalphabet!!.setOnClickListener {
