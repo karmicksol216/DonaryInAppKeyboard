@@ -29,6 +29,7 @@
                     android:layout_width="200dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
+                    android:imeOptions="actionNext"
                     android:drawableLeft="@drawable/phone_icon"
                     android:drawablePadding="@dimen/_5sdp"
                     android:background="@drawable/rounded_corner_silver_border_white_back"
@@ -60,6 +61,7 @@
                     android:cursorVisible="true"
                     android:layout_width="250dp"
                     android:layout_height="40dp"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded_corner_silver_border_white_back"
                     />
@@ -89,6 +91,7 @@
                     android:cursorVisible="true"
                     android:layout_width="160dp"
                     android:layout_height="40dp"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:drawableLeft="@drawable/dollar_icon"
                     android:background="@drawable/rounded_corner_silver_border_white_back"

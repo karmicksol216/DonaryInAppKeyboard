@@ -631,12 +631,12 @@
                 android:layout_weight="0.20"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
-                <TextView
+                <ImageView
                     android:id="@+id/row6_btn4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="*"
-                    android:textStyle="bold"
+                    android:src="@drawable/cross_icon"
+                    android:padding="@dimen/_2sdp"
                     android:background="@drawable/circle_black_key"
                     android:textSize="@dimen/kbd_qwerty_font"
                     android:textColor="@color/kbd_yellow"
@@ -650,14 +650,14 @@
             android:id="@+id/row7"
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
             android:paddingTop="@dimen/_1sdp"
             android:paddingBottom="@dimen/_1sdp"
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/row7_btn0_ll"
                 android:layout_width="0dp"
                 android:layout_weight="0.20"
@@ -674,12 +674,12 @@
                     android:textColor="@color/kbd_yellow"
 
                     android:gravity="center_horizontal|center_vertical"/>
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/row7_btn1_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.30"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
@@ -697,7 +697,7 @@
             <LinearLayout
                 android:id="@+id/row7_btn2_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.30"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
@@ -715,7 +715,7 @@
             <LinearLayout
                 android:id="@+id/row7_btn3_ll"
                 android:layout_width="0dp"
-                android:layout_weight="0.20"
+                android:layout_weight="0.30"
                 android:gravity="center_horizontal"
                 android:layout_height="wrap_content">
                 <TextView
@@ -730,7 +730,7 @@
                     android:gravity="center_horizontal|center_vertical"/>
             </LinearLayout>
 
-            <LinearLayout
+           <!-- <LinearLayout
                 android:id="@+id/row7_btn4_ll"
                 android:layout_width="0dp"
                 android:layout_weight="0.20"
@@ -746,7 +746,7 @@
                     android:textSize="@dimen/kbd_qwerty_font"
                     android:textColor="@color/kbd_yellow"
                     android:gravity="center_horizontal|center_vertical"/>
-            </LinearLayout>
+            </LinearLayout>-->
 
         </LinearLayout>
 

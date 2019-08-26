@@ -23,8 +23,10 @@ public class QuertyBigkeyABCKbdFragment extends Fragment implements View.OnClick
     TextView row3_btn0,row3_btn1,row3_btn2,row3_btn3,row3_btn4;
     TextView row4_btn0,row4_btn1,row4_btn2,row4_btn3,row4_btn4;
     TextView row5_btn0,row5_btn1,row5_btn2,row5_btn3,row5_btn4;
-    TextView row6_btn0,row6_btn1,row6_btn2,row6_btn3,row6_btn4;
-    TextView row7_btn0,row7_btn1,row7_btn2,row7_btn3,row7_btn4;
+    TextView row6_btn0,row6_btn1,row6_btn2,row6_btn3;
+    TextView row7_btn1,row7_btn2,row7_btn3;
+
+    ImageView row6_btn4;
 
     //ImageView row4_btn_cross, row2_btn_search,row3_btn_menu, row4_btn1;
 
@@ -98,10 +100,13 @@ public class QuertyBigkeyABCKbdFragment extends Fragment implements View.OnClick
         row6_btn1 = (TextView) view.findViewById(R.id.row6_btn1);
         row6_btn2 = (TextView) view.findViewById(R.id.row6_btn2);
         row6_btn3 = (TextView) view.findViewById(R.id.row6_btn3);
-        row6_btn4 = (TextView) view.findViewById(R.id.row6_btn4);
+        row6_btn4 = (ImageView) view.findViewById(R.id.row6_btn4);
 
 
-        row7_btn4 = (TextView) view.findViewById(R.id.row7_btn4);
+        row7_btn1 = (TextView) view.findViewById(R.id.row7_btn1);
+        row7_btn2 = (TextView) view.findViewById(R.id.row7_btn2);
+        row7_btn3 = (TextView) view.findViewById(R.id.row7_btn3);
+
 
         //--- key listeners -----------------
         row1_btn0.setOnClickListener(this);
@@ -134,14 +139,16 @@ public class QuertyBigkeyABCKbdFragment extends Fragment implements View.OnClick
         row5_btn3.setOnClickListener(this);
         row5_btn4.setOnClickListener(this);
 
-        //---keys-----------------
+
         row6_btn0.setOnClickListener(this);
         row6_btn1.setOnClickListener(this);
         row6_btn2.setOnClickListener(this);
         row6_btn3.setOnClickListener(this);
         row6_btn4.setOnClickListener(this);
+        row7_btn1.setOnClickListener(this);
+        row7_btn2.setOnClickListener(this);
+        row7_btn3.setOnClickListener(this);
 
-        row7_btn4.setOnClickListener(this);
 
         //--action keys
 

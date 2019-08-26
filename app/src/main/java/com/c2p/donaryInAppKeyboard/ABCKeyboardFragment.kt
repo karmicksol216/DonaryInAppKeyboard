@@ -60,7 +60,7 @@ class ABCKeyboardFragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
 
             override fun getSpanSize(position: Int): Int {
                 if (position == 27) { // totalRowCount : How many item you want to show
-                    return 2// the item in position now takes up 4 spans
+                    return 2// the item in position now takes up 2 spans
                 } else {
                     return 1;
                 }

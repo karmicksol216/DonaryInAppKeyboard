@@ -174,15 +174,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Instrumentation inst = new Instrumentation();
 
                 switch (Id) {
-                    case R.id.row1_back:      keycode = KeyEvent.KEYCODE_DEL ;inst.sendKeyDownUpSync(keycode);     ; break;
+                    case R.id.row1_back:
+                        keycode = KeyEvent.KEYCODE_DEL ;
+                        inst.sendKeyDownUpSync(keycode);
+                        break;
 
-                    case  R.id.row4_btn3:     keycode = KeyEvent.KEYCODE_ENTER ; inst.sendKeyDownUpSync(keycode); ; break;
+                    case  R.id.row4_btn3:
+                        //keycode = KeyEvent.KEYCODE_ENTER ;
+                        //inst.sendKeyDownUpSync(keycode);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                vpPager.setCurrentItem(1);//alphabets
+                            }
+                        });
+                        break;
                 }
 
 
             }
         }).start();
     }
+
 
     @Override
     public void onAlphaKeyPressed(final Integer pos) {
@@ -211,9 +224,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ic.deleteSurroundingText(1, 0);
         }else if(pos==27) {
             ic.commitText(" ", 1);
-        } else {
+        } else if(pos!=28){
             ic.commitText(alphabets[pos], 0);
         }
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Instrumentation inst = new Instrumentation();
+                int keycode = KeyEvent.KEYCODE_0;
+
+                switch (pos) {
+
+                    case  28:
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                vpPager.setCurrentItem(2);//hebrew
+                            }
+                        });
+                        break; //HEBREW
+
+
+                    case  1000:
+                        keycode = KeyEvent.KEYCODE_NAVIGATE_NEXT;
+                        inst.sendKeyDownUpSync(keycode);      ; break; //SPACE
+
+
+                }
+            }
+        }).start();
+
 
 
         /*new Thread(new Runnable() {
@@ -292,22 +334,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final InputConnection ic = view.onCreateInputConnection(new EditorInfo());//getCurrentInputConnection();
 
 
-        final String alphabets[] = {
+        /*final String alphabets2[] = {
                 "\u05D5", "\u05D4", "\u05D3", "\u05D2", "\u05D1", "\u05D0",
                 "\u05DB", "\u05DA", "\u05D9", "\u05D8", "\u05D7", "\u05D6",
                 "*", "\u05E1", "\u05E0", "\u05DF", "\u05DE", "\u05DC",
                 "*", "\u05E6", "\u05E5", "\u05E4", "\u05E3", "\u05E2",
                 "<", "\u05EA", "\u05E9", "\u2423", "\u05E8", "\u05E7"
-        };
+        };*/
 
-        if((pos>=0 && pos<=11) || (pos>=13 && pos<=17)
-                || (pos>=19 && pos<=23)
-                || (pos>=13 && pos<=17)
-                || (pos>=25 && pos<=26)
-                || (pos>=28 && pos<=29) )
+
+        final String alphabets[] = {
+                "\u05D4","\u05D3","\u05D2","\u05D1","\u05D0","*",
+                "\u05D9","\u05D8","\u05D7","\u05D6","\u05D5","*",
+                "*","\u05E0","\u05DE","\u05DC","\u05DB","*",
+                "\u05E7","\u05E6","\u05E4","\u05E2","\u05E1","⇑",
+                "\u05EA","*","\u05E9",">"," "," "};
+
+        if(pos!=5 && pos!=11 && pos!=12 && pos!=17 && pos !=23 && pos!=25 && pos!=27 )
         {
                 ic.commitText(alphabets[pos], 0);
         }
+
 
         new Thread(new Runnable() {
             @Override
@@ -316,7 +363,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Instrumentation inst = new Instrumentation();
                 int keycode = KeyEvent.KEYCODE_0;
 
+                //5 ->back || 11 ->menu || 12 ->123 || 17 ->abc || 25 -> space
+
                 switch (pos) {
+
+                    case  5:      keycode = KeyEvent.KEYCODE_DEL ;
+                                  inst.sendKeyDownUpSync(keycode);     ; break; //<
+
+                    case  11:
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                openMenu();
+                            }
+                        });
+                        break; //Menu
 
                     case  12:
                         runOnUiThread(new Runnable() {
@@ -327,22 +388,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         });
                         break; //HEBREW
 
-                    case  18:
+                    case  17:
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 vpPager.setCurrentItem(1);//ABC
                             }
                         });
-
                         break; //123
 
-                    case  24:     keycode = KeyEvent.KEYCODE_DEL ;
-                                  inst.sendKeyDownUpSync(keycode);     ; break; //<
+                    case  25:
+                        keycode = KeyEvent.KEYCODE_SPACE;
+                        inst.sendKeyDownUpSync(keycode);
+                        break; //SPACE
 
+                    case  27:
 
-                    case  27:     keycode = KeyEvent.KEYCODE_SPACE;
-                                  inst.sendKeyDownUpSync(keycode);      ; break; //SPACE
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                vpPager.setCurrentItem(0);//numeric
+                            }
+                        });
+                        //keycode = KeyEvent.KEYCODE_ENTER;
+                        //inst.sendKeyDownUpSync(keycode);
+                        break; //>
 
 
                 }
@@ -399,9 +469,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int keycode = KeyEvent.KEYCODE_0;
 
                 switch (Id) {
-                    case R.id.row1_back:      keycode = KeyEvent.KEYCODE_DEL ;inst.sendKeyDownUpSync(keycode);     ; break;
+                    case R.id.row1_back:
+                        keycode = KeyEvent.KEYCODE_DEL ;
+                        inst.sendKeyDownUpSync(keycode);
+                        break;
 
-                    case  R.id.row4_btn3:     keycode = KeyEvent.KEYCODE_ENTER ; inst.sendKeyDownUpSync(keycode); ; break;
+                    case  R.id.row4_btn3:
+                        //keycode = KeyEvent.KEYCODE_ENTER ;
+                        //inst.sendKeyDownUpSync(keycode);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                vpPager.setCurrentItem(1);//alphabets
+                            }
+                        });
+                        break;
                 }
 
 
@@ -453,9 +535,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.row5_btn4:      ic.commitText(".", 0);      ; break;
 
             case  R.id.row6_btn0:      ic.commitText("x", 0);      ; break;
-            case  R.id.row6_btn1:      ic.commitText("v", 0);     ; break;
+            case  R.id.row6_btn1:      ic.commitText("v", 0);      ; break;
             case  R.id.row6_btn2:      ic.commitText("n", 0);      ; break;
             case  R.id.row6_btn3:      ic.commitText("?", 0);      ; break;
+
+            case  R.id.row7_btn1:      ic.commitText("/", 0);      ; break;
+            case  R.id.row7_btn2:      ic.commitText(" ", 0);      ; break;
+
         }
 
         new Thread(new Runnable() {
@@ -467,8 +553,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 switch (Id) {
 
-                    case  R.id.row7_btn4:
+                    case  R.id.row6_btn4:
                         keycode = KeyEvent.KEYCODE_DEL;
+                        inst.sendKeyDownUpSync(keycode);     ; break;
+                    case  R.id.row7_btn3:
+                        keycode = KeyEvent.KEYCODE_ENTER;
                         inst.sendKeyDownUpSync(keycode);     ; break;
                 }
 
@@ -541,8 +630,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         inst.sendKeyDownUpSync(keycode);     ; break;
 
                     case  R.id.row7_btn2:
-                        keycode = KeyEvent.KEYCODE_ENTER;
-                        inst.sendKeyDownUpSync(keycode);     ; break;
+                        //keycode = KeyEvent.KEYCODE_ENTER;
+                        //inst.sendKeyDownUpSync(keycode);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                vpPager.setCurrentItem(0);//numeric
+                            }
+                        });
+                        break;
                 }
 
             }
@@ -550,7 +646,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    //<<<<######### ****** ALL KEYBOARD CALLBACKS  ** end ****** #####################
+    //<<<<<<<<<<<<<<<< ****** kbd callbacks end ****** <<<<<<<<<<<<<<<<<<<<<<<
 
 
 

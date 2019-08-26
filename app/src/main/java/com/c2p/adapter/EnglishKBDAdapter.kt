@@ -82,13 +82,13 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
                 if(position== 5){
                     Glide.with(context!!)
                             .load(R.drawable.back34)
-                            .override(40, 40)
+                            .override(30, 40)
                             .into(view.btn1_img!!);
                 }
                 if(position==27){
                     Glide.with(context!!)
-                            .load(R.drawable.spbar_big)
-                            .override(160, 90)
+                            .load(R.drawable.spbar_big2)
+                            //.override(160, 120)
                             .into(view.btn1_img!!);
 
                 }

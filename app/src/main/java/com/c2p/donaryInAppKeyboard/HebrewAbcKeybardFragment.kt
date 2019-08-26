@@ -21,7 +21,7 @@ class HebrewAbcKeybardFragment : Fragment() , HebrewKBDAdapter.OnItemClickListen
     private var mActivity: AppCompatActivity? = null
     var rv: RecyclerView?=null
     var adapter: HebrewKBDAdapter?=null
-    var layoutManager: RecyclerView.LayoutManager?=null
+    var layoutManager: GridLayoutManager? ?=null
     var listner:HebrewKBDAdapter.OnItemClickListener?=null
 
     internal lateinit var onKeyBoardlistener: OnKeyBoard
@@ -55,8 +55,20 @@ class HebrewAbcKeybardFragment : Fragment() , HebrewKBDAdapter.OnItemClickListen
         listner=this@HebrewAbcKeybardFragment
         adapter = HebrewKBDAdapter(context!!, listner as HebrewAbcKeybardFragment )
         layoutManager = GridLayoutManager(mContext, 6)
+
+        layoutManager!!.setSpanSizeLookup(object : GridLayoutManager.SpanSizeLookup() {
+
+            override fun getSpanSize(position: Int): Int {
+                if (position == 25) { // totalRowCount : How many item you want to show
+                    return 3// the item in position now takes up 2 spans
+                } else {
+                    return 1;
+                }
+            }
+        })
         rv!!.layoutManager = layoutManager
         rv!!.adapter = adapter
+        rv!!.setHasFixedSize(true)
     }
 
     //val alphabets = arrayOf<String>("A","B","C","D","E","F","G","H","I","J","K","L","*","M","N","O","P","Q","*","R","S","T","U","V","<","W","X","\u2423","Y","Z")
