@@ -13,7 +13,7 @@ import com.c2p.donaryInAppKeyboards.R;
 import com.c2p.listeners.OnKeyBoard;
 
 
-public class SymbolKeyboardFragment extends Fragment implements View.OnClickListener {
+public class SymbolKeyboardFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
     private String title;
     private int page;
@@ -104,6 +104,7 @@ public class SymbolKeyboardFragment extends Fragment implements View.OnClickList
         row3_btn_menu = (ImageView) view.findViewById(R.id.row3_btn_menu);
 
         row1_back.setOnClickListener(this);
+        row1_back.setOnLongClickListener(this);
         row2_btn_search.setOnClickListener(this);
         row3_btn_menu.setOnClickListener(this);
 
@@ -114,5 +115,11 @@ public class SymbolKeyboardFragment extends Fragment implements View.OnClickList
     @Override
     public void onClick(View v) {
         onKeyBoardlistener.onSymbolKeyPressed(v.getId());
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        onKeyBoardlistener.onLongKeyPressed(v.getId());
+        return false;
     }
 }

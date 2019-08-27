@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ public class FragmentParentThree extends Fragment {
     private int mNum;
     private int mColor;
 
-    static final int NUMBER_OF_PAGES = 2;
+    static final int NUMBER_OF_PAGES = 200;
     VerticalViewPager mPager;
     MyAdapter2 mAdapter;
 
@@ -52,12 +53,13 @@ public class FragmentParentThree extends Fragment {
         mAdapter = new MyAdapter2(getChildFragmentManager()); //**
         mPager = v.findViewById(R.id.hzPager);
         mPager.setAdapter(mAdapter);
+        mPager.setCurrentItem(100);
 
         return v;
     }
 
 
-    public static class MyAdapter2 extends FragmentPagerAdapter {
+    public static class MyAdapter2 extends FragmentStatePagerAdapter {
 
         public MyAdapter2(FragmentManager fm) {
             super(fm);
@@ -70,8 +72,8 @@ public class FragmentParentThree extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-
-            switch (position) {
+            int fragmentPos = position % 2;
+            switch (fragmentPos) {
                 case 0:
                     return new HebrewAbcKeybardFragment();
                 case 1:

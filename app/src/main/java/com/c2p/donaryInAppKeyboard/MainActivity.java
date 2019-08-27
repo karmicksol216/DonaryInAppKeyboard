@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vpPager = (HorizontalViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
+        vpPager.setCurrentItem(150);
 
 
         Fragment fm=new Screen1Fragment();
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 3;
+        private static int NUM_ITEMS = 300;
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -98,13 +99,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public Fragment getItem(int position) {
-            switch (position) {
+            int fragmentPos = position % 3;
+            switch (fragmentPos) {
                 case 0:
-                     return FragmentParentOne.newInstance(0, Color.BLUE);
+                    return FragmentParentTwo.newInstance(0, Color.BLUE); //ABC
                 case 1:
-                    return FragmentParentTwo.newInstance(0, Color.BLUE);
+                    return FragmentParentOne.newInstance(0, Color.BLUE); //Numeric
                 case 2:
-                    return FragmentParentThree.newInstance(0, Color.BLUE);
+                    return FragmentParentThree.newInstance(0, Color.BLUE);//Hebrew
                 default:
                     return null;
             }
@@ -141,6 +143,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View view= this.getCurrentFocus();
         final InputConnection ic = view.onCreateInputConnection(new EditorInfo());//getCurrentInputConnection();
 
+
+
         switch (Id) {
 
             case  R.id.row1_btn1:     ic.commitText("1", 0);     ; break;
@@ -162,6 +166,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case  R.id.row3_btn_menu:
                 openMenu();
+                break;
+
+            case  R.id.row1_back:
+                //ic.deleteSurroundingText(1, 0);
                 break;
         }
 
@@ -185,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                vpPager.setCurrentItem(1);//alphabets
+                                vpPager.setCurrentItem(2);//Hebrew
                             }
                         });
                         break;
@@ -241,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                vpPager.setCurrentItem(2);//hebrew
+                                vpPager.setCurrentItem(1);//Number
                             }
                         });
                         break; //HEBREW
@@ -368,7 +376,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 switch (pos) {
 
                     case  5:      keycode = KeyEvent.KEYCODE_DEL ;
-                                  inst.sendKeyDownUpSync(keycode);     ; break; //<
+                                  inst.sendKeyDownUpSync(keycode);
+                                  break; //<
 
                     case  11:
                         runOnUiThread(new Runnable() {
@@ -383,19 +392,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                vpPager.setCurrentItem(0);//numeric
+                                vpPager.setCurrentItem(1);//numeric
                             }
                         });
-                        break; //HEBREW
+                        break;
 
                     case  17:
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                vpPager.setCurrentItem(1);//ABC
+                                vpPager.setCurrentItem(0);//ABC
                             }
                         });
-                        break; //123
+                        break;
 
                     case  25:
                         keycode = KeyEvent.KEYCODE_SPACE;
@@ -480,7 +489,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                vpPager.setCurrentItem(1);//alphabets
+                                vpPager.setCurrentItem(2);//hebrew
                             }
                         });
                         break;
@@ -644,6 +653,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }).start();
 
+    }
+
+    @Override
+    public void onLongKeyPressed(Integer value) {
+
+
+        View view= this.getCurrentFocus();
+        final InputConnection ic = view.onCreateInputConnection(new EditorInfo());//getCurrentInputConnection();
+        EditText edt=(EditText)view;
+        edt.setText("");
     }
 
     //<<<<<<<<<<<<<<<< ****** kbd callbacks end ****** <<<<<<<<<<<<<<<<<<<<<<<

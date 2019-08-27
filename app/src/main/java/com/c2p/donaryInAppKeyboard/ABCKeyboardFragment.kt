@@ -15,14 +15,17 @@ import com.c2p.donaryInAppKeyboards.R
 import com.c2p.listeners.OnKeyBoard
 
 
-class ABCKeyboardFragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
+class ABCKeyboardFragment : Fragment() , EnglishKBDAdapter.OnItemClickListener, EnglishKBDAdapter.OnItemLongClickListener {
+
 
     var mContext: Context ?= null
     private var mActivity: AppCompatActivity? = null
     var rv: RecyclerView?=null
     var adapter: EnglishKBDAdapter?=null
     var layoutManager: GridLayoutManager? =null
+
     var listner:EnglishKBDAdapter.OnItemClickListener?=null
+    var listner2:EnglishKBDAdapter.OnItemLongClickListener?=null
 
     internal lateinit var onKeyBoardlistener: OnKeyBoard
 
@@ -53,7 +56,8 @@ class ABCKeyboardFragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
 
         rv=view.findViewById(R.id.rv_english) as RecyclerView
         listner=this@ABCKeyboardFragment
-        adapter = EnglishKBDAdapter(context!!, listner as ABCKeyboardFragment )
+        listner2=this@ABCKeyboardFragment
+        adapter = EnglishKBDAdapter(context!!, listner as ABCKeyboardFragment,listner2 as ABCKeyboardFragment )
         layoutManager = GridLayoutManager(mContext, 6)
 
         layoutManager?.setSpanSizeLookup(object : GridLayoutManager.SpanSizeLookup() {
@@ -79,6 +83,11 @@ class ABCKeyboardFragment : Fragment() , EnglishKBDAdapter.OnItemClickListener{
 
         //12-hebrew , 18-numeric, 24-move left, 27-space
         onKeyBoardlistener.onAlphaKeyPressed(pos)
+    }
+
+    override fun onItemLongClicked(position: Int): Boolean {
+        onKeyBoardlistener.onLongKeyPressed(position)
+        return false
     }
 
 }

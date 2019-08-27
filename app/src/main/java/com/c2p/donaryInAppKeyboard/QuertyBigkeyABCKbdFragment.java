@@ -13,7 +13,7 @@ import com.c2p.donaryInAppKeyboards.R;
 import com.c2p.listeners.OnKeyBoard;
 
 
-public class QuertyBigkeyABCKbdFragment extends Fragment implements View.OnClickListener {
+public class QuertyBigkeyABCKbdFragment extends Fragment implements View.OnClickListener , View.OnLongClickListener{
 
     private String title;
     private int page;
@@ -144,25 +144,16 @@ public class QuertyBigkeyABCKbdFragment extends Fragment implements View.OnClick
         row6_btn1.setOnClickListener(this);
         row6_btn2.setOnClickListener(this);
         row6_btn3.setOnClickListener(this);
+
         row6_btn4.setOnClickListener(this);
+        row6_btn4.setOnLongClickListener(this);
+
         row7_btn1.setOnClickListener(this);
         row7_btn2.setOnClickListener(this);
         row7_btn3.setOnClickListener(this);
 
 
-        //--action keys
 
-        /*row1_btn_dollar = (TextView) view.findViewById(R.id.row1_btn_dollar);
-        row2_btn_search = (ImageView) view.findViewById(R.id.row2_btn_search);
-        row3_btn_menu = (ImageView) view.findViewById(R.id.row3_btn_menu);
-        row4_btn_cross = (ImageView) view.findViewById(R.id.row4_btn_cross);
-        row4_btn1 = (ImageView) view.findViewById(R.id.row4_btn1);
-
-        row1_btn_dollar.setOnClickListener(this);
-        row2_btn_search.setOnClickListener(this);
-        row3_btn_menu.setOnClickListener(this);
-        row4_btn_cross.setOnClickListener(this);
-        row4_btn1.setOnClickListener(this);*/
 
 
         return view;
@@ -171,5 +162,13 @@ public class QuertyBigkeyABCKbdFragment extends Fragment implements View.OnClick
     @Override
     public void onClick(View v) {
         onKeyBoardlistener.onQwertyKeyPressed(v.getId());
+    }
+
+
+
+    @Override
+    public boolean onLongClick(View v) {
+        onKeyBoardlistener.onLongKeyPressed(v.getId());
+        return false;
     }
 }

@@ -8,4 +8,6 @@ public interface OnKeyBoard {
     void onSymbolKeyPressed(Integer value);
     void onQwertyKeyPressed(Integer  value);
     void onHebrewQwertyKeyPressed(Integer  value);
+
+    void onLongKeyPressed(Integer value);
 }

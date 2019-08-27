@@ -14,8 +14,9 @@
 
         <TextView
             android:id="@+id/btn1_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_1sdp"
             android:text="\u05D0"
             android:textStyle="bold"
             android:textSize="@dimen/kbd_alphabet_font"

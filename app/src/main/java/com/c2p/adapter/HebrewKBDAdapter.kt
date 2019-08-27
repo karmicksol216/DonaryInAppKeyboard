@@ -12,11 +12,13 @@ import com.c2p.ViewHolder.HebrewKeySqrViewHolder
 import com.c2p.donaryInAppKeyboards.R
 
 
-class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener, listener2: OnItemLongClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     var context:Context?=null
+
     private var listener: OnItemClickListener? = null
+    private var listener2: OnItemLongClickListener? = null
 
     private val TYPE_1 = 1
     private val TYPE_2 = 2
@@ -46,7 +48,7 @@ class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener
         this.selectCheck=ArrayList()
         this.context=context
         this.listener=listener
-
+        this.listener2=listener2
     }
 
 
@@ -91,7 +93,7 @@ class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener
                 if(position == 5){
                     Glide.with(context!!)
                             .load(R.drawable.back34)
-                            .override(30, 40)
+                            //.override(30, 50)
                             .into(view.btn1_img!!);
                 }
 
@@ -127,31 +129,47 @@ class HebrewKBDAdapter constructor(context:Context, listener:OnItemClickListener
                 listener!!.onItemClick(view,position,total);
             }
 
-        } else {
+            view.selectalphabet!!.setOnLongClickListener(View.OnLongClickListener {
+                listener2!!.onItemLongClicked(position)
+                true
+            })
 
-            var view:  HebrewKeyViewHolder=holder as HebrewKeyViewHolder
+
+            } else {
+
+            var view: HebrewKeyViewHolder = holder as HebrewKeyViewHolder
             try {
                 view.btn1_txt!!.text = alphabets.get(position)
-                if(position==28 || position==29){
-                    view.btn1_txt!!.background=context?.getResources()!!.getDrawable(R.drawable.circle_black_key);
+                if (position == 28 || position == 29) {
+                    view.btn1_txt!!.background = context?.getResources()!!.getDrawable(R.drawable.circle_black_key);
                 }
 
-            }catch (e:Exception){ e.printStackTrace()}
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
 
             view.selectalphabet!!.setOnClickListener {
-                selectedPosition=position;
+                selectedPosition = position;
                 //notifyDataSetChanged();
-                var total=getItemCount()
-                listener!!.onItemClick(view,position,total);
+                var total = getItemCount()
+                listener!!.onItemClick(view, position, total);
             }
-        }
 
+            view.selectalphabet!!.setOnLongClickListener(View.OnLongClickListener {
+                listener2!!.onItemLongClicked(position)
+                true
+            })
+        }
 
     }
 
 
     interface OnItemClickListener {
         fun onItemClick(item: RecyclerView.ViewHolder, id:Int, total:Int)
+    }
+
+    interface OnItemLongClickListener  {
+        fun onItemLongClicked(position: Int): Boolean
     }
 
     override fun getItemId(position: Int): Long {

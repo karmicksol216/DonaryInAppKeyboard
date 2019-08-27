@@ -10,19 +10,23 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.c2p.adapter.EnglishKBDAdapter
 import com.c2p.adapter.HebrewKBDAdapter
 import com.c2p.donaryInAppKeyboards.R
 import com.c2p.listeners.OnKeyBoard
 
 
-class HebrewAbcKeybardFragment : Fragment() , HebrewKBDAdapter.OnItemClickListener{
+class HebrewAbcKeybardFragment : Fragment() , HebrewKBDAdapter.OnItemClickListener, HebrewKBDAdapter.OnItemLongClickListener{
+
 
     var mContext: Context ?= null
     private var mActivity: AppCompatActivity? = null
     var rv: RecyclerView?=null
     var adapter: HebrewKBDAdapter?=null
     var layoutManager: GridLayoutManager? ?=null
+
     var listner:HebrewKBDAdapter.OnItemClickListener?=null
+    var listner2: HebrewKBDAdapter.OnItemLongClickListener?=null
 
     internal lateinit var onKeyBoardlistener: OnKeyBoard
 
@@ -53,7 +57,8 @@ class HebrewAbcKeybardFragment : Fragment() , HebrewKBDAdapter.OnItemClickListen
 
         rv=view.findViewById(R.id.rv_english) as RecyclerView
         listner=this@HebrewAbcKeybardFragment
-        adapter = HebrewKBDAdapter(context!!, listner as HebrewAbcKeybardFragment )
+        listner2=this@HebrewAbcKeybardFragment
+        adapter = HebrewKBDAdapter(context!!, listner as HebrewAbcKeybardFragment, listner2 as HebrewAbcKeybardFragment )
         layoutManager = GridLayoutManager(mContext, 6)
 
         layoutManager!!.setSpanSizeLookup(object : GridLayoutManager.SpanSizeLookup() {
@@ -78,6 +83,11 @@ class HebrewAbcKeybardFragment : Fragment() , HebrewKBDAdapter.OnItemClickListen
 
         //12-hebrew , 18-numeric, 24-move left, 27-space
         onKeyBoardlistener.onHebrewKeyPressed(pos)
+    }
+
+    override fun onItemLongClicked(position: Int): Boolean {
+        onKeyBoardlistener.onLongKeyPressed(position)
+        return false
     }
 
 }

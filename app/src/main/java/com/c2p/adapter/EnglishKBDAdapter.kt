@@ -12,11 +12,16 @@ import com.c2p.ViewHolder.EnglishKeySqrViewHolder
 import com.c2p.donaryInAppKeyboards.R
 
 
-class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+
+
+
+class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListener, listener2:OnItemLongClickListener ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     var context:Context?=null
     private var listener: OnItemClickListener? = null
+    private var listener2: OnItemLongClickListener? = null
 
     private val TYPE_1 = 1
     private val TYPE_2 = 2
@@ -37,6 +42,7 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
         this.selectCheck=ArrayList()
         this.context=context
         this.listener=listener
+        this.listener2=listener2
 
     }
 
@@ -82,7 +88,7 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
                 if(position== 5){
                     Glide.with(context!!)
                             .load(R.drawable.back34)
-                            .override(30, 40)
+                            //.override(30, 50)
                             .into(view.btn1_img!!);
                 }
                 if(position==27){
@@ -104,6 +110,11 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
                 listener!!.onItemClick(view,position,total);
             }
 
+            view.selectalphabet!!.setOnLongClickListener(View.OnLongClickListener {
+                listener2!!.onItemLongClicked(position)
+                true
+            })
+
         } else {
             //(viewHolder as EmailViewHolder).setEmailDetails(employees.get(position))
             var view:  EnglishKeyViewHolder=holder as EnglishKeyViewHolder
@@ -122,6 +133,11 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
                 var total=getItemCount()
                 listener!!.onItemClick(view,position,total);
             }
+
+            view.selectalphabet!!.setOnLongClickListener(View.OnLongClickListener {
+                listener2!!.onItemLongClicked(position)
+                true
+            })
         }
 
 
@@ -130,6 +146,10 @@ class EnglishKBDAdapter constructor(context:Context,  listener:OnItemClickListen
 
     interface OnItemClickListener {
         fun onItemClick(item: RecyclerView.ViewHolder, id:Int, total:Int)
+    }
+
+    interface OnItemLongClickListener {
+        fun onItemLongClicked(position: Int): Boolean
     }
 
     override fun getItemId(position: Int): Long {
