@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="kbd_number_font">@dimen/_22sdp</dimen>
-    <dimen name="kbd_alphabet_font">@dimen/_18sdp</dimen>
-    <dimen name="kbd_qwerty_font">@dimen/_20sdp</dimen>
+    <dimen name="kbd_number_font">@dimen/_26sdp</dimen>
+    <dimen name="kbd_alphabet_font">@dimen/_19sdp</dimen>
+    <dimen name="kbd_qwerty_font">@dimen/_19sdp</dimen>
 </resources>

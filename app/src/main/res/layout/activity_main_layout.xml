@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/main"
+    android:background="@color/base_green"
     >
 
     <!-- top half 50% will contains others screen -->
@@ -15,7 +16,7 @@
         android:layout_weight=".5"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:background="@color/base_green"
+
         >
         <ScrollView
             android:layout_width="match_parent"
@@ -39,15 +40,19 @@
         android:id="@+id/kbd_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".5"
+        android:layout_weight="0.5"
         android:background="#000000"
         android:orientation="vertical"
+        android:layout_marginTop="@dimen/_6sdp"
         >
         <!--  Each fragments to be loaded in viewpage is an keyboard -->
         <com.c2p.customviews.HorizontalViewPager
             android:id="@+id/vpPager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_12sdp"
+            >
         </com.c2p.customviews.HorizontalViewPager>
     </LinearLayout>
 

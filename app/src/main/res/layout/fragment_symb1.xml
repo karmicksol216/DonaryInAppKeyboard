@@ -314,7 +314,7 @@
                     android:id="@+id/row4_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="#"
                     android:textStyle="bold"
                     android:textSize="@dimen/kbd_number_font"
                     android:textColor="@color/kbd_yellow"

@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#000000"
+    android:background="@color/kbd_tray_bg_outer"
     android:layout_height="match_parent" >
 
      <LinearLayout
         android:id="@+id/kbd_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000"
+        android:background="@color/kbd_tray_bg"
         android:layout_marginTop="@dimen/_28sdp"
-        android:layout_marginLeft="@dimen/_25sdp"
-        android:layout_marginRight="@dimen/_25sdp"
-        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_23sdp"
+        android:layout_marginRight="@dimen/_23sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:orientation="vertical"
         >
         <!--  Each fragments to be loaded in viewpage is an keyboard -->

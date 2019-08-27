@@ -449,7 +449,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.row3_btn3:      ic.commitText("-", 0);     ; break;
 
             case  R.id.row4_space:     ic.commitText(" ", 0);     ; break;
-            case  R.id.row4_btn1:      ic.commitText("0", 0);     ; break;
+            case  R.id.row4_btn1:      ic.commitText("#", 0);     ; break;
             case  R.id.row4_btn2:      ic.commitText(".", 0);     ; break;
 
             case  R.id.row2_btn_search:
@@ -504,39 +504,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
 
         switch (Id) {
-            case  R.id.row1_btn0:      ic.commitText("q", 0);      ; break;
-            case  R.id.row1_btn1:      ic.commitText("e", 0);     ; break;
-            case  R.id.row1_btn2:      ic.commitText("t", 0);      ; break;
-            case  R.id.row1_btn3:      ic.commitText("u", 0);      ; break;
-            case  R.id.row1_btn4:      ic.commitText("o", 0);      ; break;
+            case  R.id.row1_btn0:      ic.commitText("Q", 0);      ; break;
+            case  R.id.row1_btn1:      ic.commitText("E", 0);     ; break;
+            case  R.id.row1_btn2:      ic.commitText("T", 0);      ; break;
+            case  R.id.row1_btn3:      ic.commitText("U", 0);      ; break;
+            case  R.id.row1_btn4:      ic.commitText("O", 0);      ; break;
 
-            case  R.id.row2_btn0:      ic.commitText("w", 0);      ; break;
-            case  R.id.row2_btn1:      ic.commitText("r", 0);     ; break;
-            case  R.id.row2_btn2:      ic.commitText("y", 0);      ; break;
-            case  R.id.row2_btn3:      ic.commitText("i", 0);      ; break;
-            case  R.id.row2_btn4:      ic.commitText("p", 0);      ; break;
+            case  R.id.row2_btn0:      ic.commitText("W", 0);      ; break;
+            case  R.id.row2_btn1:      ic.commitText("R", 0);     ; break;
+            case  R.id.row2_btn2:      ic.commitText("Y", 0);      ; break;
+            case  R.id.row2_btn3:      ic.commitText("I", 0);      ; break;
+            case  R.id.row2_btn4:      ic.commitText("P", 0);      ; break;
 
-            case  R.id.row3_btn0:      ic.commitText("a", 0);      ; break;
-            case  R.id.row3_btn1:      ic.commitText("d", 0);     ; break;
-            case  R.id.row3_btn2:      ic.commitText("g", 0);      ; break;
-            case  R.id.row3_btn3:      ic.commitText("j", 0);      ; break;
-            case  R.id.row3_btn4:      ic.commitText("l", 0);      ; break;
+            case  R.id.row3_btn0:      ic.commitText("A", 0);      ; break;
+            case  R.id.row3_btn1:      ic.commitText("D", 0);     ; break;
+            case  R.id.row3_btn2:      ic.commitText("G", 0);      ; break;
+            case  R.id.row3_btn3:      ic.commitText("J", 0);      ; break;
+            case  R.id.row3_btn4:      ic.commitText("L", 0);      ; break;
 
-            case  R.id.row4_btn0:      ic.commitText("s", 0);      ; break;
-            case  R.id.row4_btn1:      ic.commitText("f", 0);     ; break;
-            case  R.id.row4_btn2:      ic.commitText("h", 0);      ; break;
-            case  R.id.row4_btn3:      ic.commitText("k", 0);      ; break;
+            case  R.id.row4_btn0:      ic.commitText("S", 0);      ; break;
+            case  R.id.row4_btn1:      ic.commitText("F", 0);     ; break;
+            case  R.id.row4_btn2:      ic.commitText("H", 0);      ; break;
+            case  R.id.row4_btn3:      ic.commitText("K", 0);      ; break;
             case  R.id.row4_btn4:      ic.commitText(",", 0);      ; break;
 
-            case  R.id.row5_btn0:      ic.commitText("z", 0);      ; break;
-            case  R.id.row5_btn1:      ic.commitText("c", 0);     ; break;
-            case  R.id.row5_btn2:      ic.commitText("b", 0);      ; break;
-            case  R.id.row5_btn3:      ic.commitText("m", 0);      ; break;
+            case  R.id.row5_btn0:      ic.commitText("Z", 0);      ; break;
+            case  R.id.row5_btn1:      ic.commitText("C", 0);     ; break;
+            case  R.id.row5_btn2:      ic.commitText("B", 0);      ; break;
+            case  R.id.row5_btn3:      ic.commitText("M", 0);      ; break;
             case  R.id.row5_btn4:      ic.commitText(".", 0);      ; break;
 
-            case  R.id.row6_btn0:      ic.commitText("x", 0);      ; break;
-            case  R.id.row6_btn1:      ic.commitText("v", 0);      ; break;
-            case  R.id.row6_btn2:      ic.commitText("n", 0);      ; break;
+            case  R.id.row6_btn0:      ic.commitText("X", 0);      ; break;
+            case  R.id.row6_btn1:      ic.commitText("V", 0);      ; break;
+            case  R.id.row6_btn2:      ic.commitText("N", 0);      ; break;
             case  R.id.row6_btn3:      ic.commitText("?", 0);      ; break;
 
             case  R.id.row7_btn1:      ic.commitText("/", 0);      ; break;

@@ -12,6 +12,9 @@
     <color name="kbd_background">#272727</color>
     <color name="base_green">#81C784</color>
 
+    <color name="kbd_tray_bg">#000000</color>
+    <color name="kbd_tray_bg_outer">#000000</color>
+
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
